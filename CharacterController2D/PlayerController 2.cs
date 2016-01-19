@@ -37,7 +37,7 @@ public class PlayerController: MonoBehaviour
       else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
       {
         velocity.x = -runSpeed;
-        goLeft;
+        goLeft();
         
         if(_controller.isGrounded)
           _animator.goToStateIfNotAlreadyThere(runState);
