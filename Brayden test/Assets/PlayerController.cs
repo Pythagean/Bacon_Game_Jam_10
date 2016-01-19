@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
 	public float groundDamping = 20f; // how fast do we change direction? higher means faster
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
+  
+  public Rigidbody2D projectile;
+  public float projectileSpeed;
+  private Vector3 projectileTarget;
+  
 
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -19,6 +24,9 @@ public class PlayerController : MonoBehaviour
 	private Animator _animator;
 	private RaycastHit2D _lastControllerColliderHit;
 	private Vector3 _velocity;
+  
+  
+
 
 
 	void Awake()
@@ -66,7 +74,7 @@ public class PlayerController : MonoBehaviour
 		if( _controller.isGrounded )
 			_velocity.y = 0;
 
-		if( Input.GetKey( KeyCode.RightArrow ) )
+		if( Input.GetKey( KeyCode.RightArrow ) || Input.GetKey( KeyCode.D ))
 		{
 			normalizedHorizontalSpeed = 1;
 			if( transform.localScale.x < 0f )
@@ -75,7 +83,7 @@ public class PlayerController : MonoBehaviour
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Run" ) );
 		}
-		else if( Input.GetKey( KeyCode.LeftArrow ) )
+		else if( Input.GetKey( KeyCode.LeftArrow ) Input.GetKey( KeyCode.A ))
 		{
 			normalizedHorizontalSpeed = -1;
 			if( transform.localScale.x > 0f )
@@ -91,10 +99,24 @@ public class PlayerController : MonoBehaviour
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Idle" ) );
 		}
+    
+    //My code - Shooting towards click position
+    if (Input.GetKeyDown (KeyCode.Mouse0)) {
+     
+     //Mouse Positions
+      projectileTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+      projectileTarget.z = transform.position.z;
+      
+      //Instantiate projectile and add force
+      Rigidbody2D projectileClone = (Rigidbody2D) Instantiate(projectile, transform.position, transform.rotation);
+      projectileClone.rigidbody.AddForce(projectile.transform.forward * projectileSpeed);
+      //Or try this
+      //projectileClone.transform.position = Vector3.MoveTowards(projectileClone.transform.position, projectileTarget, projectileSpeed * Time.deltaTime);
+    }
 
 
 		// we can only jump whilst grounded
-		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) )
+		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) Input.GetKey( KeyCode.W ) Input.GetKey( KeyCode.Space ))
 		{
 			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			_animator.Play( Animator.StringToHash( "Jump" ) );
