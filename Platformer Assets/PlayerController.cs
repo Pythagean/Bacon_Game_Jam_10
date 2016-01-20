@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
   public float projectileSpeed 150f;
   private Vector3 projectileTarget;
   
+  //Weapon config
+  public int currentWeapon;
+  public transform[] weapons;
+  
   //Health and Stamina config
   public float maxHealth = 200f;
   public float maxStamina = 100f;
@@ -27,6 +31,8 @@ public class PlayerController : MonoBehaviour
   public float healthRegen = 5f;
 	public float staminaRegen = 30f;
   private float staminaUsageJump = 15f;
+  
+  
   
 
 	[HideInInspector]
@@ -135,6 +141,19 @@ public class PlayerController : MonoBehaviour
 			projectileRigidbody.transform.rotation = Quaternion.Euler (0f, 0f, zRotation);
 
     }
+    
+    if (Input.GetKeyDown(KeyCode.Keypad1)
+    {
+      changeWeapon(1);
+    } 
+    else if (Input.GetKeyDown(KeyCode.Keypad2)
+    {
+      changeWeapon(2);
+    } 
+    else if (Input.GetKeyDown(KeyCode.Keypad3)
+    {
+      changeWeapon(3);
+    }
 
 
 		// we can only jump whilst grounded
@@ -172,5 +191,15 @@ public class PlayerController : MonoBehaviour
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
 	}
+  
+  public void changeWeapon(int num) {
+     currentWeapon = num;
+     for(int i = 0; i < weapons.Length; i++) {
+         if(i == num)
+             weapons[i].gameObject.SetActive(true);
+         else
+             weapons[i].gameObject.SetActive(false);
+     }
+ }
 
 }
