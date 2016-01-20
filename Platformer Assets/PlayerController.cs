@@ -12,9 +12,21 @@ public class PlayerController : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
   
+  //Projectile config
   public GameObject projectile;
-  public float projectileSpeed;
+  public float projectileSpeed 150f;
   private Vector3 projectileTarget;
+  
+  //Health and Stamina config
+  public float maxHealth = 200f;
+  public float maxStamina = 100f;
+  
+  private float currentHealth;
+	private float currentStamina;
+  
+  public float healthRegen = 5f;
+	public float staminaRegen = 30f;
+  private float staminaUsageJump = 15f;
   
 
 	[HideInInspector]
@@ -24,11 +36,7 @@ public class PlayerController : MonoBehaviour
 	private Animator _animator;
 	private RaycastHit2D _lastControllerColliderHit;
 	private Vector3 _velocity;
-  
-  
-
-
-
+ 
 	void Awake()
 	{
 		_animator = GetComponent<Animator>();
@@ -38,6 +46,9 @@ public class PlayerController : MonoBehaviour
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
+    
+    currentHealth = maxHealth;
+    currentStamina = maxStamina;
 	}
 
 
@@ -73,8 +84,14 @@ public class PlayerController : MonoBehaviour
 	{
 		if( _controller.isGrounded )
 			_velocity.y = 0;
+    
+      //Stamina Regenetration
+      if(currentStamina > maxStamina - 1)
+				currentStamina = maxStamina;
+			else
+				currentStamina += staminaRegen * Time.deltaTime;
 
-		if( Input.GetKey( KeyCode.RightArrow ) || Input.GetKey( KeyCode.D ))
+		if( Input.GetKey( KeyCode.D ))
 		{
 			normalizedHorizontalSpeed = 1;
 			if( transform.localScale.x < 0f )
@@ -83,7 +100,7 @@ public class PlayerController : MonoBehaviour
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Run" ) );
 		}
-		else if( Input.GetKey( KeyCode.LeftArrow ) || Input.GetKey( KeyCode.A ))
+		else if(Input.GetKey( KeyCode.A ))
 		{
 			normalizedHorizontalSpeed = -1;
 			if( transform.localScale.x > 0f )
@@ -100,7 +117,7 @@ public class PlayerController : MonoBehaviour
 				_animator.Play( Animator.StringToHash( "Idle" ) );
 		}
     
-    //My code - Shooting towards click position
+    //Shooting Projectile
     if (Input.GetKeyDown (KeyCode.Mouse0)) {
 
 			Vector3 mousePositionVector = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
@@ -116,32 +133,23 @@ public class PlayerController : MonoBehaviour
 			diff.Normalize ();
 			float zRotation = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
 			projectileRigidbody.transform.rotation = Quaternion.Euler (0f, 0f, zRotation);
-     //Mouse Positions
-      //projectileTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-     // projectileTarget.z = transform.position.z;
-		//	Debug.Log ("projectileTarget: " + projectileTarget);
-
-      //Instantiate projectile and add force
-     // Rigidbody2D projectileClone = (Rigidbody2D) Instantiate(projectile, transform.position, transform.rotation);
-			//projectileClone.GetComponent<Rigidbody2D>().AddForce(projectileTarget.transform.forward * projectileSpeed);
-	  //Debug.Log ("projectile.transform.forward: " + projectile.transform.forward);
-
-      //Or try this
-      //projectileClone.velocity = Vector3.MoveTowards(projectileClone.transform.position, projectileTarget, projectileSpeed * Time.deltaTime);
-			//Debug.Log ("from: " + projectileClone.transform.position);
-			//Debug.Log ("to: " + projectileTarget);
-
-	
     }
 
 
 		// we can only jump whilst grounded
-		if( _controller.isGrounded && (Input.GetKeyDown( KeyCode.UpArrow ) || Input.GetKeyDown( KeyCode.W ) || Input.GetKeyDown( KeyCode.Space )))
+  if( _controller.isGrounded && (Input.GetKeyDown( KeyCode.Space ) || Input.GetKeyDown( KeyCode.W )) && currentStamina > staminaUsageJump)
 		{
 			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			_animator.Play( Animator.StringToHash( "Jump" ) );
+      currentStamina -= staminaUsageJump;
 		}
+    
+    //Health Regenetration
+      if(currentHealth > maxHealth - 1)
+				currentHealth = maxHealth;
+			else
+				currentHealth += healthRegen * Time.deltaTime;
 
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
