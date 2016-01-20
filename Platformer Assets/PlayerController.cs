@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
   
-  public Rigidbody2D projectile;
+  public GameObject projectile;
   public float projectileSpeed;
   private Vector3 projectileTarget;
   
@@ -102,21 +102,42 @@ public class PlayerController : MonoBehaviour
     
     //My code - Shooting towards click position
     if (Input.GetKeyDown (KeyCode.Mouse0)) {
-     
+
+			Vector3 mousePositionVector = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
+			Vector3 mousePositionWorldVector = Camera.main.ScreenToWorldPoint (mousePositionVector);
+			Vector3 playerPosition = new Vector3 (_controller.transform.position.x, transform.position.y);
+			Debug.DrawRay (playerPosition, (mousePositionWorldVector - playerPosition), Color.green, 1);
+
+			GameObject projectileInstance = (GameObject)Instantiate (projectile, playerPosition, Quaternion.identity);
+			Rigidbody2D projectileRigidbody = projectileInstance.GetComponent<Rigidbody2D> ();
+			projectileRigidbody.AddForce ((mousePositionWorldVector - playerPosition) * projectileSpeed, ForceMode2D.Force);
+
+			Vector3 diff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - projectileRigidbody.transform.position;
+			diff.Normalize ();
+			float zRotation = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
+			projectileRigidbody.transform.rotation = Quaternion.Euler (0f, 0f, zRotation);
      //Mouse Positions
-      projectileTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-      projectileTarget.z = transform.position.z;
-      
+      //projectileTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+     // projectileTarget.z = transform.position.z;
+		//	Debug.Log ("projectileTarget: " + projectileTarget);
+
       //Instantiate projectile and add force
-      Rigidbody2D projectileClone = (Rigidbody2D) Instantiate(projectile, transform.position, transform.rotation);
-      projectileClone.GetComponent<Rigidbody2D>().AddForce(projectile.transform.forward * projectileSpeed);
+     // Rigidbody2D projectileClone = (Rigidbody2D) Instantiate(projectile, transform.position, transform.rotation);
+			//projectileClone.GetComponent<Rigidbody2D>().AddForce(projectileTarget.transform.forward * projectileSpeed);
+	  //Debug.Log ("projectile.transform.forward: " + projectile.transform.forward);
+
       //Or try this
-      //projectileClone.transform.position = Vector3.MoveTowards(projectileClone.transform.position, projectileTarget, projectileSpeed * Time.deltaTime);
+      //projectileClone.velocity = Vector3.MoveTowards(projectileClone.transform.position, projectileTarget, projectileSpeed * Time.deltaTime);
+			//Debug.Log ("from: " + projectileClone.transform.position);
+			//Debug.Log ("to: " + projectileTarget);
+
+	
     }
 
 
 		// we can only jump whilst grounded
-		if( _controller.isGrounded && (Input.GetKeyDown( KeyCode.UpArrow ) || Input.GetKey( KeyCode.W ) || Input.GetKey( KeyCode.Space )))
+		if( _controller.isGrounded && (Input.GetKeyDown( KeyCode.UpArrow ) || Input.GetKeyDown( KeyCode.W ) || Input.GetKeyDown( KeyCode.Space )))
 		{
 			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			_animator.Play( Animator.StringToHash( "Jump" ) );
