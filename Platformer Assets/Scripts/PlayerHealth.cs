@@ -5,8 +5,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	private GameObject player;
 
-	public int maxHealth;
-	public int curHealth;
+	public float maxHealth;
+	public float curHealth;
 
 	public Texture2D bgImage; 
 	public Texture2D fgImage; 
@@ -18,24 +18,25 @@ public class PlayerHealth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {   
-		healthBarLength = Screen.width /2;    
+		healthBarLength = Screen.width /4;    
+		
+		player = GetComponent<PlayerController>();
 
-		maxHealth = 100;
-		curHealth = 100;
+		maxHealth = player.maxHealth;
+		curHealth = player.curHealth;
 
 		OnGUI ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		AdjustCurrentHealth(0);
+		//AdjustCurrentHealth(0);
 		curHealth = player.curHealth;
 		OnGUI ();
 	}
 
 	void OnGUI () {
 		// Create one Group to contain both images
-		// Adjust the first 2 coordinates to place it somewhere else on-screen
 		GUI.BeginGroup (new Rect (x,y, healthBarLength,height));
 
 		// Draw the background image
@@ -67,6 +68,6 @@ public class PlayerHealth : MonoBehaviour {
 		if(maxHealth <1)
 			maxHealth = 1;
 
-		healthBarLength =(Screen.width /2) * (curHealth / (float)maxHealth);
+		healthBarLength =(Screen.width /4) * (curHealth / (float)maxHealth);
 	}
 }
