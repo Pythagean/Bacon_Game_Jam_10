@@ -14,16 +14,18 @@ public class PlayerController : MonoBehaviour
   
   //Projectile config
   public GameObject projectile;
-  public float projectileSpeed 150f;
+  public float projectileSpeed = 150f;
   private Vector3 projectileTarget;
   
   //Weapon config
   public int currentWeapon;
-  public transform[] weapons;
+  public Transform[] weapons;
   
   //Health and Stamina config
-  public float maxHealth = 200f;
-  public float maxStamina = 100f;
+  public int maxHealth = 100;
+  public int maxStamina = 100;
+	public int curHealth = 100;
+	public GameObject health;
   
   private float currentHealth;
 	private float currentStamina;
@@ -124,7 +126,7 @@ public class PlayerController : MonoBehaviour
 		}
     
     //Shooting Projectile
-    if (Input.GetKeyDown (KeyCode.Mouse0)) {
+		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 
 			Vector3 mousePositionVector = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
 			Vector3 mousePositionWorldVector = Camera.main.ScreenToWorldPoint (mousePositionVector);
@@ -142,15 +144,15 @@ public class PlayerController : MonoBehaviour
 
     }
     
-    if (Input.GetKeyDown(KeyCode.Keypad1)
+		if (Input.GetKeyDown(KeyCode.Keypad1))
     {
       changeWeapon(1);
     } 
-    else if (Input.GetKeyDown(KeyCode.Keypad2)
+		else if (Input.GetKeyDown(KeyCode.Keypad2))
     {
       changeWeapon(2);
     } 
-    else if (Input.GetKeyDown(KeyCode.Keypad3)
+		else if (Input.GetKeyDown(KeyCode.Keypad3))
     {
       changeWeapon(3);
     }
@@ -165,10 +167,12 @@ public class PlayerController : MonoBehaviour
 		}
     
     //Health Regenetration
-      if(currentHealth > maxHealth - 1)
+      /*if(currentHealth > maxHealth - 1)
 				currentHealth = maxHealth;
 			else
-				currentHealth += healthRegen * Time.deltaTime;
+				currentHealth += healthRegen * Time.deltaTime;*/
+
+
 
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
