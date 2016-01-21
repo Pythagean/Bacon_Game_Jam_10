@@ -12,27 +12,27 @@ public class PlayerController : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
   
-  //Projectile config
-  public GameObject projectile;
-  public float projectileSpeed = 150f;
-  private Vector3 projectileTarget;
+  	//Projectile config
+	public GameObject projectile;
+  	public float projectileSpeed = 150f;
+	private Vector3 projectileTarget;
   
-  //Weapon config
-  public int currentWeapon;
-  public Transform[] weapons;
+	//Weapon config
+	public int currentWeapon;
+	public Transform[] weapons;
   
-  //Health and Stamina config
-  public int maxHealth = 100;
-  public int maxStamina = 100;
-	public int curHealth = 100;
+  	//Health and Stamina config
+	public float maxHealth = 100;
+  	public float maxStamina = 100;
+	public float curHealth = 100;
 	public GameObject health;
   
-  private float currentHealth;
-	private float currentStamina;
+  	public float currentHealth;
+	public float currentStamina;
   
-  public float healthRegen = 5f;
+  	public float healthRegen = 1f;
 	public float staminaRegen = 30f;
-  private float staminaUsageJump = 15f;
+  	private float staminaUsageJump = 15f;
   
   
   
@@ -49,14 +49,17 @@ public class PlayerController : MonoBehaviour
 	{
 		_animator = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2D>();
+		health = GetComponent<PlayerHealth>();
 
 		// listen to some events for illustration purposes
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
     
-    currentHealth = maxHealth;
-    currentStamina = maxStamina;
+		currentHealth = maxHealth;
+    		currentStamina = maxStamina;
+    
+
 	}
 
 
@@ -93,11 +96,11 @@ public class PlayerController : MonoBehaviour
 		if( _controller.isGrounded )
 			_velocity.y = 0;
     
-      //Stamina Regenetration
-      if(currentStamina > maxStamina - 1)
-				currentStamina = maxStamina;
-			else
-				currentStamina += staminaRegen * Time.deltaTime;
+      	//Stamina Regenetration
+		 if(currentStamina > maxStamina - 1)
+			currentStamina = maxStamina;
+		else
+			currentStamina += staminaRegen * Time.deltaTime;
 
 		if( Input.GetKey( KeyCode.D ))
 		{
@@ -120,12 +123,11 @@ public class PlayerController : MonoBehaviour
 		else
 		{
 			normalizedHorizontalSpeed = 0;
-
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Idle" ) );
 		}
     
-    //Shooting Projectile
+    	//Shooting Projectile
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 
 			Vector3 mousePositionVector = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
@@ -142,35 +144,36 @@ public class PlayerController : MonoBehaviour
 			float zRotation = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
 			projectileRigidbody.transform.rotation = Quaternion.Euler (0f, 0f, zRotation);
 
-    }
+    		}
     
 		if (Input.GetKeyDown(KeyCode.Keypad1))
-    {
-      changeWeapon(1);
-    } 
+    		{
+			changeWeapon(1);
+		 } 
 		else if (Input.GetKeyDown(KeyCode.Keypad2))
-    {
-      changeWeapon(2);
-    } 
+    		{
+      			changeWeapon(2);
+    		} 
 		else if (Input.GetKeyDown(KeyCode.Keypad3))
-    {
-      changeWeapon(3);
-    }
+    		{
+      			changeWeapon(3);
+    		}
 
 
 		// we can only jump whilst grounded
-  if( _controller.isGrounded && (Input.GetKeyDown( KeyCode.Space ) || Input.GetKeyDown( KeyCode.W )) && currentStamina > staminaUsageJump)
+  		if( _controller.isGrounded && (Input.GetKeyDown( KeyCode.Space ) || Input.GetKeyDown( KeyCode.W )) && currentStamina > staminaUsageJump)
 		{
 			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			_animator.Play( Animator.StringToHash( "Jump" ) );
-      currentStamina -= staminaUsageJump;
+			currentStamina -= staminaUsageJump;
 		}
     
-    //Health Regenetration
-      /*if(currentHealth > maxHealth - 1)
+    		//Health Regenetration
+      		if(currentHealth > maxHealth - 1)
 				currentHealth = maxHealth;
 			else
-				currentHealth += healthRegen * Time.deltaTime;*/
+				//currentHealth += healthRegen * Time.deltaTime;
+				health.AdjustCurrentHealth(healthRegen); //May only need to use this for Health Regen
 
 
 
@@ -192,23 +195,23 @@ public class PlayerController : MonoBehaviour
 
 		_controller.move( _velocity * Time.deltaTime );
 		
-    OnGUI();
+    		OnGUI();
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
 	}
   
-  public void changeWeapon(int num) {
-     currentWeapon = num;
-     for(int i = 0; i < weapons.Length; i++) {
-         if(i == num)
-             weapons[i].gameObject.SetActive(true);
-         else
-             weapons[i].gameObject.SetActive(false);
-     }
- }
+  	public void changeWeapon(int num) {
+     		currentWeapon = num;
+     		for(int i = 0; i < weapons.Length; i++) {
+         		if(i == num)
+             			weapons[i].gameObject.SetActive(true);
+         		else
+             			weapons[i].gameObject.SetActive(false);
+     		}
+ 	}
  
- void OnGUI() 
+ 	void OnGUI() 
 	{
 		GUI.Label(new Rect(20, 10, 100, 20), "Player");
 		GUI.Label(new Rect(10, 30, 150, 20), "Health: " + currentHealth + " / " + maxHealth.ToString());
