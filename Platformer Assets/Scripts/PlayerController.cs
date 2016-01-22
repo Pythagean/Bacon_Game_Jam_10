@@ -22,12 +22,11 @@ public class PlayerController : MonoBehaviour
 	public Transform[] weapons;
   
   	//Health and Stamina config
+	public GameObject health;
 	public float maxHealth = 100;
   	public float maxStamina = 100;
-	public float curHealth = 100;
-	public GameObject health;
   
-  	public float currentHealth;
+  	public float curHealth;
 	public float currentStamina;
   
   	public float healthRegen = 1f;
@@ -49,15 +48,15 @@ public class PlayerController : MonoBehaviour
 	{
 		_animator = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2D>();
-		health = GetComponent<PlayerHealth>();
+		//health = GetComponent<PlayerHealth>();
 
 		// listen to some events for illustration purposes
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
     
-		currentHealth = maxHealth;
-    		currentStamina = maxStamina;
+		curHealth = maxHealth;
+    	currentStamina = maxStamina;
     
 
 	}
@@ -169,11 +168,8 @@ public class PlayerController : MonoBehaviour
 		}
     
     		//Health Regenetration
-      		if(currentHealth > maxHealth - 1)
-				currentHealth = maxHealth;
-			else
-				//currentHealth += healthRegen * Time.deltaTime;
-				health.AdjustCurrentHealth(healthRegen); //May only need to use this for Health Regen
+			//curHealth += healthRegen * Time.deltaTime;
+			//PlayerHealth.AdjustCurrentHealth(healthRegen); //May only need to use this for Health Regen
 
 
 
@@ -194,8 +190,6 @@ public class PlayerController : MonoBehaviour
 		}
 
 		_controller.move( _velocity * Time.deltaTime );
-		
-    		OnGUI();
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
@@ -213,9 +207,9 @@ public class PlayerController : MonoBehaviour
  
  	void OnGUI() 
 	{
-		GUI.Label(new Rect(20, 10, 100, 20), "Player");
-		GUI.Label(new Rect(10, 30, 150, 20), "Health: " + currentHealth + " / " + maxHealth.ToString());
-		GUI.Label(new Rect(10, 50, 150, 20), "Stamina: " + currentStamina + " / " + maxStamina.ToString());
+		//GUI.Label(new Rect(20, 10, 100, 20), "Player");
+		//GUI.Label(new Rect(10, 30, 150, 20), "Health: " + currentHealth + " / " + maxHealth.ToString());
+		//GUI.Label(new Rect(10, 50, 150, 20), "Stamina: " + currentStamina + " / " + maxStamina.ToString());
 	}
 
 }

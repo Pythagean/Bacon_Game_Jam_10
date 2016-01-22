@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
 
-	private PlayerController2 player;
+	private PlayerController player;
 
 	public float maxHealth;
 	public float curHealth;
@@ -25,19 +25,18 @@ public class PlayerHealth : MonoBehaviour {
 		healthBarLength = bgImage.width;    
 		height = bgImage.height;
 		
-		player = GetComponent<PlayerController2>();
+		player = GetComponent<PlayerController>();
 
 		maxHealth = player.maxHealth;
 		curHealth = player.curHealth;
 
-		OnGUI ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		AdjustCurrentHealth(player.healthRegen);
 		curHealth = player.curHealth;
-		OnGUI ();
+		
 	}
 
 	void OnGUI () {

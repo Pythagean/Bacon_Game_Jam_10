@@ -3,11 +3,20 @@ using System.Collections;
 using Prime31;
 
 
-public class PlayerController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-  private CharacterController2D _controller;
+    // movement config
+    public float gravity = -25f;
+    public float runSpeed = 8f;
+    public float groundDamping = 20f; // how fast do we change direction? higher means faster
+    public float inAirDamping = 5f;
+    public float jumpHeight = 3f;
+
+    private CharacterController2D _controller;
   private Animator _animator;
   private Vector3 _velocity;
+
+    public float randomMultiplier = 150f;
   
   private bool movingLeft;
   private bool movingRight;
@@ -15,8 +24,10 @@ public class PlayerController : MonoBehaviour
   private float timeToSpendMoving;
   
   private bool wandering;
-  
-  void Awake()
+
+    private float normalizedHorizontalSpeed = 0;
+
+    void Awake()
 	{
 		_animator = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2D>();
@@ -26,7 +37,7 @@ public class PlayerController : MonoBehaviour
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
     
-    waitBeforeNextMove = Random.value * 500;
+    waitBeforeNextMove = Random.value * randomMultiplier;
     wandering = true;
 	}
   
@@ -56,29 +67,51 @@ public class PlayerController : MonoBehaviour
   
   void Update()
   {
+       // Debug.Log("wandering: " + wandering.ToString());
+        //Debug.Log("waitBeforeNextMove: " + waitBeforeNextMove.ToString());
+       // Debug.Log("timeToSpendMoving: " + timeToSpendMoving.ToString());
+        //Debug.Log("movingLeft: " + movingLeft.ToString());
+       // Debug.Log("movingRight: " + movingRight.ToString());
 
-    if( _controller.isGrounded )
+        if ( _controller.isGrounded )
       _velocity.y = 0;
     
     
     if (wandering)
     {
-      if (waitBeforeNextMove == 0)
+      if (waitBeforeNextMove < 0)
       {
         //All movement has been done, recalculate random variables
-        if (timeToSpendMoving == 0)
+        if (timeToSpendMoving <= 0)
         {
-          //Decide which direction to move
-          if(Random.value > 0.5)
+            
+            //Decide which direction to move
+            float directionVariable = Random.value;
+            if (movingLeft)
+            {
+                directionVariable += 0.3f;
+            } else
+            {
+                directionVariable -= 0.3f;
+            }
+
+        timeToSpendMoving = Random.value * randomMultiplier;
+        waitBeforeNextMove = Random.value * randomMultiplier;
+
+        //Debug.Log("directionVariable: " + directionVariable.ToString());
+        if (directionVariable < 0.5)
           {
+            Debug.Log("Waiting to move Left " + timeToSpendMoving.ToString() + " in " + waitBeforeNextMove.ToString());
             movingLeft = true;
+            movingRight = false;
           } else
           {
+            Debug.Log("Waiting to move Right: " + timeToSpendMoving.ToString() + " in " + waitBeforeNextMove.ToString());
             movingRight = true;
+            movingLeft = false;
           }
           
-          timeToSpendMoving = Random.value * 500;
-          waitBeforeNextMove = Random.value * 500;
+          
         } else
         {
           
@@ -89,7 +122,7 @@ public class PlayerController : MonoBehaviour
               transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
 
             if( _controller.isGrounded )
-              _animator.Play( Animator.StringToHash( "Run" ) );
+              _animator.Play( Animator.StringToHash( "Enemy_Run" ) );
             
           } else if (movingRight)
           {
@@ -98,31 +131,42 @@ public class PlayerController : MonoBehaviour
               transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
 
             if( _controller.isGrounded )
-              _animator.Play( Animator.StringToHash( "Run" ) );
+              _animator.Play( Animator.StringToHash("Enemy_Run") );
           } else
           {
             normalizedHorizontalSpeed = 0;
             if( _controller.isGrounded )
-          _animator.Play( Animator.StringToHash( "Idle" ) );
+            {
+                //_animator.Play(Animator.StringToHash("Enemy_Idle"));
+                Debug.Log("Enemy_Idle");
+            }
+                
           }
           
-          var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-        _velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
-
-        // apply gravity before moving
-        _velocity.y += gravity * Time.deltaTime;
-        
-        _controller.move( _velocity * Time.deltaTime );
-        
-        _velocity = _controller.velocity;
+          
+       
           
           timeToSpendMoving--;
         }
       } else
       {
-        waitBeforeNextMove--;
+            normalizedHorizontalSpeed = 0;
+            _animator.Play(Animator.StringToHash("Enemy_Idle"));
+            waitBeforeNextMove--;
       }
-    } else //Not wandering
+
+    var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
+    _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
+
+
+    // apply gravity before moving
+    _velocity.y += gravity * Time.deltaTime;
+
+    _controller.move(_velocity * Time.deltaTime);
+
+    _velocity = _controller.velocity;
+
+        } else //Not wandering
     {
       
     }
