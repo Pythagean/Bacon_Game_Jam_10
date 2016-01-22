@@ -22,15 +22,15 @@ public class PlayerController : MonoBehaviour
 	public Transform[] weapons;
   
   	//Health and Stamina config
-	public GameObject health;
+	//public GameObject health;
 	public float maxHealth = 100;
   	public float maxStamina = 100;
   
   	public float curHealth;
-	public float currentStamina;
+	public float curStamina;
   
   	public float healthRegen = 1f;
-	public float staminaRegen = 30f;
+	public float staminaRegen = 1f;
   	private float staminaUsageJump = 15f;
   
   
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
     
 		curHealth = maxHealth;
-    	currentStamina = maxStamina;
+    	curStamina = maxStamina;
     
 
 	}
@@ -96,10 +96,10 @@ public class PlayerController : MonoBehaviour
 			_velocity.y = 0;
     
       	//Stamina Regenetration
-		 if(currentStamina > maxStamina - 1)
-			currentStamina = maxStamina;
-		else
-			currentStamina += staminaRegen * Time.deltaTime;
+		 //if(curStamina > maxStamina - 1)
+			//curStamina = maxStamina;
+		//else
+			//curStamina += staminaRegen * Time.deltaTime;
 
 		if( Input.GetKey( KeyCode.D ))
 		{
@@ -160,11 +160,11 @@ public class PlayerController : MonoBehaviour
 
 
 		// we can only jump whilst grounded
-  		if( _controller.isGrounded && (Input.GetKeyDown( KeyCode.Space ) || Input.GetKeyDown( KeyCode.W )) && currentStamina > staminaUsageJump)
+  		if( _controller.isGrounded && (Input.GetKeyDown( KeyCode.Space ) || Input.GetKeyDown( KeyCode.W )) && curStamina > staminaUsageJump)
 		{
 			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			_animator.Play( Animator.StringToHash( "Jump" ) );
-			currentStamina -= staminaUsageJump;
+			curStamina -= staminaUsageJump;
 		}
     
     		//Health Regenetration
