@@ -1,26 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+//using Prime31;
 
 public class PlayerHealth : MonoBehaviour {
 
-	private GameObject player;
+	private PlayerController2 player;
 
 	public float maxHealth;
 	public float curHealth;
 
 	public Texture2D bgImage; 
 	public Texture2D fgImage; 
+	public Texture2D heart;
 
 	public float healthBarLength;
-	public float x = 0f;
-	public float y = 0f;
-	public float height = 32f;
+	public float x;
+	public float y;
+	public float height;
 
 	// Use this for initialization
 	void Start () {   
-		healthBarLength = Screen.width /4;    
+		x = (float) (heart.width + 10);
+		y = 5f;
+		healthBarLength = bgImage.width;    
+		height = bgImage.height;
 		
-		player = GetComponent<PlayerController>();
+		player = GetComponent<PlayerController2>();
 
 		maxHealth = player.maxHealth;
 		curHealth = player.curHealth;
@@ -30,44 +35,47 @@ public class PlayerHealth : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//AdjustCurrentHealth(0);
+		AdjustCurrentHealth(player.healthRegen);
 		curHealth = player.curHealth;
 		OnGUI ();
 	}
 
 	void OnGUI () {
+		//Draws heart
+		GUI.DrawTexture (new Rect (x - 5 - heart.width, y, heart.width, heart.height), heart);
+
 		// Create one Group to contain both images
-		GUI.BeginGroup (new Rect (x,y, healthBarLength,height));
+		//GUI.BeginGroup (new Rect (x,y, healthBarLength,height));
 
 		// Draw the background image
-		GUI.Box (new Rect (x,y, healthBarLength,height), bgImage);
+		GUI.DrawTexture (new Rect (x,y, bgImage.width,height), bgImage);
 
 		// Create a second Group which will be clipped
 		// We want to clip the image and not scale it, which is why we need the second Group
-		GUI.BeginGroup (new Rect (x,y, curHealth / maxHealth * healthBarLength, height));
+		GUI.BeginGroup (new Rect (x,y, (curHealth / maxHealth) * bgImage.width, height));
 
 		// Draw the foreground image
-		GUI.Box (new Rect (x,y,healthBarLength,height), fgImage);
+		GUI.DrawTexture (new Rect (0f,0f,bgImage.width,height), fgImage);
 
 		// End both Groups
-		GUI.EndGroup ();
+		//GUI.EndGroup ();
 
 		GUI.EndGroup ();
 	}
 
-	public void AdjustCurrentHealth(int adj){
+	public void AdjustCurrentHealth(float adj){
 
 		curHealth += adj;
 
 		if(curHealth <0)
 			curHealth = 0;
 
-		if(curHealth > maxHealth)
+		if(curHealth > maxHealth - 1)
 			curHealth = maxHealth;
 
 		if(maxHealth <1)
 			maxHealth = 1;
 
-		healthBarLength =(Screen.width /4) * (curHealth / (float)maxHealth);
+		healthBarLength =(bgImage.width) * (curHealth / maxHealth);
 	}
 }
