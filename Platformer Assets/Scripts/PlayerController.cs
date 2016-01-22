@@ -204,12 +204,5 @@ public class PlayerController : MonoBehaviour
              			weapons[i].gameObject.SetActive(false);
      		}
  	}
- 
- 	void OnGUI() 
-	{
-		//GUI.Label(new Rect(20, 10, 100, 20), "Player");
-		//GUI.Label(new Rect(10, 30, 150, 20), "Health: " + currentHealth + " / " + maxHealth.ToString());
-		//GUI.Label(new Rect(10, 50, 150, 20), "Stamina: " + currentStamina + " / " + maxStamina.ToString());
-	}
 
 }

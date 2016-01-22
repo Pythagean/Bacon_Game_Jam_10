@@ -1,48 +1,49 @@
 ﻿using UnityEngine;
 using System.Collections;
-//using Prime31;
 
-public class PlayerHealth : MonoBehaviour {
+public class PlayerStamina : MonoBehaviour {
 
 	private PlayerController player;
 
-	public float maxHealth;
-	public float curHealth;
+	public float maxStamina;
+	public float curStamina;
+	public float staminaRegen;
 
 	public Texture2D bgImage; 
 	public Texture2D fgImage; 
-	public Texture2D heart;
+	public Texture2D stamina;
 
-	public float healthBarLength;
+	public float staminaBarLength;
 	public float x;
 	public float y;
 	public float height;
 
 	// Use this for initialization
 	void Start () {   
-		x = (float) (heart.width + 10);
-		y = 5f;
-		healthBarLength = bgImage.width;    
+		x = (float) (stamina.width + 10);
+		y = 30f;
+		staminaBarLength = bgImage.width;    
 		height = bgImage.height;
-		
+
 		player = GetComponent<PlayerController>();
 
-		maxHealth = player.maxHealth;
-		curHealth = player.curHealth;
+		maxStamina = player.maxStamina;
+		curStamina = player.curStamina;
+		staminaRegen = player.staminaRegen;
 
 		OnGUI ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		AdjustCurrentHealth(player.healthRegen);
-		curHealth = player.curHealth;
+		AdjustCurrentStamina(player.staminaRegen);
+		curStamina = player.curStamina;
 		OnGUI ();
 	}
 
 	void OnGUI () {
 		//Draws heart
-		GUI.DrawTexture (new Rect (x - 5 - heart.width, y, heart.width, heart.height), heart);
+		GUI.DrawTexture (new Rect (x - 5 - stamina.width, y, stamina.width, stamina.height), stamina);
 
 		// Create one Group to contain both images
 		//GUI.BeginGroup (new Rect (x,y, healthBarLength,height));
@@ -52,7 +53,7 @@ public class PlayerHealth : MonoBehaviour {
 
 		// Create a second Group which will be clipped
 		// We want to clip the image and not scale it, which is why we need the second Group
-		GUI.BeginGroup (new Rect (x,y, (curHealth / maxHealth) * bgImage.width, height));
+		GUI.BeginGroup (new Rect (x,y, (curStamina / maxStamina) * bgImage.width, height));
 
 		// Draw the foreground image
 		GUI.DrawTexture (new Rect (0f,0f,bgImage.width,height), fgImage);
@@ -63,19 +64,19 @@ public class PlayerHealth : MonoBehaviour {
 		GUI.EndGroup ();
 	}
 
-	public void AdjustCurrentHealth(float adj){
+	public void AdjustCurrentStamina(float adj){
 
-		curHealth += adj;
+		curStamina += adj;
 
-		if(curHealth <0)
-			curHealth = 0;
+		if(curStamina <0)
+			curStamina = 0;
 
-		if(curHealth > maxHealth - 1)
-			curHealth = maxHealth;
+		if(curStamina > maxStamina - 1)
+			curStamina = maxStamina;
 
-		if(maxHealth <1)
-			maxHealth = 1;
+		if(maxStamina <1)
+			maxStamina = 1;
 
-		healthBarLength =(bgImage.width) * (curHealth / maxHealth);
+		staminaBarLength =(bgImage.width) * (curStamina / maxStamina);
 	}
 }
