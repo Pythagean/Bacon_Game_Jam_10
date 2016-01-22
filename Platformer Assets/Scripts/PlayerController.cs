@@ -96,10 +96,17 @@ public class PlayerController : MonoBehaviour
 			_velocity.y = 0;
     
       	//Stamina Regenetration
-		 //if(curStamina > maxStamina - 1)
-			//curStamina = maxStamina;
-		//else
-			//curStamina += staminaRegen * Time.deltaTime;
+		 if(curStamina > maxStamina - 1)
+			curStamina = maxStamina;
+		else
+			curStamina += staminaRegen * Time.deltaTime;
+
+		//Health Regeneration
+		if (curHealth > maxHealth - 1)
+			curHealth = maxHealth;
+		else
+			curHealth += staminaRegen * Time.deltaTime;
+
 
 		if( Input.GetKey( KeyCode.D ))
 		{
@@ -166,13 +173,7 @@ public class PlayerController : MonoBehaviour
 			_animator.Play( Animator.StringToHash( "Jump" ) );
 			curStamina -= staminaUsageJump;
 		}
-    
-    		//Health Regenetration
-			//curHealth += healthRegen * Time.deltaTime;
-			//PlayerHealth.AdjustCurrentHealth(healthRegen); //May only need to use this for Health Regen
-
-
-
+ 
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
 		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?

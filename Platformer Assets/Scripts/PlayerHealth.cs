@@ -35,7 +35,6 @@ public class PlayerHealth : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		AdjustCurrentHealth(player.healthRegen);
 		curHealth = player.curHealth;
 		OnGUI ();
 	}
@@ -44,38 +43,17 @@ public class PlayerHealth : MonoBehaviour {
 		//Draws heart
 		GUI.DrawTexture (new Rect (x - 5 - heart.width, y, heart.width, heart.height), heart);
 
-		// Create one Group to contain both images
-		//GUI.BeginGroup (new Rect (x,y, healthBarLength,height));
-
 		// Draw the background image
 		GUI.DrawTexture (new Rect (x,y, bgImage.width,height), bgImage);
 
-		// Create a second Group which will be clipped
+		// Create a Group which will be clipped
 		// We want to clip the image and not scale it, which is why we need the second Group
 		GUI.BeginGroup (new Rect (x,y, (curHealth / maxHealth) * bgImage.width, height));
 
 		// Draw the foreground image
 		GUI.DrawTexture (new Rect (0f,0f,bgImage.width,height), fgImage);
 
-		// End both Groups
-		//GUI.EndGroup ();
-
 		GUI.EndGroup ();
 	}
 
-	public void AdjustCurrentHealth(float adj){
-
-		curHealth += adj;
-
-		if(curHealth <0)
-			curHealth = 0;
-
-		if(curHealth > maxHealth - 1)
-			curHealth = maxHealth;
-
-		if(maxHealth <1)
-			maxHealth = 1;
-
-		healthBarLength =(bgImage.width) * (curHealth / maxHealth);
-	}
 }
