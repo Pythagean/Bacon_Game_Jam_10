@@ -8,14 +8,16 @@ public class arrowScript : MonoBehaviour {
 	//public float arrowLifetime = 4.0f;
 	//public Vector3 arrowDirection = new Vector3(0,0);
 
-	public float arrowCollision = 1/2;
+	public float arrowCollision = 0.3f;
 	public LayerMask platformMask = 0;
+	public LayerMask enemyMask = 0;
 
 	private Animator _animator;
 	
 	public string arrowType = "normal";
 	private LineRenderer line;
 	private GameObject player;
+	private bool hasHitEnemy;
 
 	// Line start width
 	private float grappleStartWidth = 0.1f;
@@ -24,6 +26,12 @@ public class arrowScript : MonoBehaviour {
 	//Rigidbody2D arrowRigidBody = getComponent<Rigidbody2D>();
 	public Vector3 velocity;
 	private RaycastHit2D _raycast;
+	private RaycastHit2D _raycastEnemy;
+
+
+	private GameObject enemyHitGameObject;
+	private Vector3 enemyHitPosition;
+
 	//public 
 
 	void Update () 
@@ -47,7 +55,35 @@ public class arrowScript : MonoBehaviour {
 		//Detect Collisions
 		velocity = GetComponent<Rigidbody2D>().velocity;
 		_raycast = Physics2D.Raycast(transform.position,velocity, arrowCollision, platformMask);
+
+		_raycastEnemy = Physics2D.Raycast(transform.position,velocity, arrowCollision, enemyMask);
+
 		Debug.DrawRay (transform.position, velocity / 20, Color.red, 2);
+
+		//If hit enemy detected
+		if (_raycastEnemy && !hasHitEnemy) 
+		{
+			//Stops arrow and sets gravity to 0
+			GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+			GetComponent<Rigidbody2D>().gravityScale = 0;
+
+			enemyHitGameObject = _raycastEnemy.transform.gameObject;
+			//enemyHitPosition = enemyHitGameObject.transform.position;
+			hasHitEnemy = true;
+
+			var enemyEnemyController = enemyHitGameObject.GetComponent<EnemyController> ();
+			enemyEnemyController.HitByArrow (arrowType);
+		}
+
+		if (enemyHitGameObject != null && hasHitEnemy)
+		{
+			
+			GetComponent<Rigidbody2D> ().transform.position = enemyHitGameObject.transform.position;
+
+		}
+
+
+
 
 		//If collision detected
 		if (_raycast) 
@@ -56,6 +92,9 @@ public class arrowScript : MonoBehaviour {
 			GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 			GetComponent<Rigidbody2D>().gravityScale = 0;
 		}
+
+
+
 	}
 
 	void Create()

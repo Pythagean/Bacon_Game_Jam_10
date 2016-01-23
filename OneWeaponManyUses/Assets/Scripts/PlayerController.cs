@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
 			var objectCount = objects.Length;
 			foreach (var obj in objects) {
 				var currentDistanceToGrapple = Vector2.Distance(transform.position,obj.transform.position);
-				Debug.Log ("currentDist: " + currentDistanceToGrapple.ToString ());
+				//Debug.Log ("currentDist: " + currentDistanceToGrapple.ToString ());
 
 				freezeGravity = true;
 				if(currentDistanceToGrapple < 1)
