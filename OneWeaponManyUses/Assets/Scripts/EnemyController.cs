@@ -101,12 +101,12 @@ public class EnemyController : MonoBehaviour
         //Debug.Log("directionVariable: " + directionVariable.ToString());
         if (directionVariable < 0.5)
           {
-            Debug.Log("Waiting to move Left " + timeToSpendMoving.ToString() + " in " + waitBeforeNextMove.ToString());
+            //Debug.Log("Waiting to move Left " + timeToSpendMoving.ToString() + " in " + waitBeforeNextMove.ToString());
             movingLeft = true;
             movingRight = false;
           } else
           {
-            Debug.Log("Waiting to move Right: " + timeToSpendMoving.ToString() + " in " + waitBeforeNextMove.ToString());
+           // Debug.Log("Waiting to move Right: " + timeToSpendMoving.ToString() + " in " + waitBeforeNextMove.ToString());
             movingRight = true;
             movingLeft = false;
           }

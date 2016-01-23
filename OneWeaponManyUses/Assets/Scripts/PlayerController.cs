@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 	public KeyCode Jump = KeyCode.W;
 	public KeyCode Down = KeyCode.S;
 	public KeyCode ShootArrow = KeyCode.Mouse0;
-	public KeyCode ShootGrappleHook = KeyCode.Mouse1;
+	public KeyCode ShootSpecialArrow = KeyCode.Mouse1;
 	public KeyCode GrapplePull = KeyCode.Q;
 
 	private bool disableHang = false;
@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
 	public int numberOfGrapples = 5;
 	public int numberOfArrows = 20;
+	public int numberOfFire = 5;
   
 	List<GameObject> arrowList;
 	public GameObject ArrowPrefab;
@@ -60,6 +61,8 @@ public class PlayerController : MonoBehaviour
 	private Vector2 _topLeft;
 	private Vector2 _bottomRight;
 	private Vector2 _bottomLeft;
+
+	private string arrowType = "grapple";
   
 
 	[HideInInspector]
@@ -73,7 +76,6 @@ public class PlayerController : MonoBehaviour
 	//Grapple variables
 	private RaycastHit2D _raycastHitGrapple;
 	private bool grappling = false;
-	private bool grapplingHold = false;
 	private bool holdingLedge = false;
 	public float grapplePullSpeed = 0.2f;
 
@@ -152,7 +154,7 @@ public class PlayerController : MonoBehaviour
 			curHealth += healthRegen * Time.deltaTime;
 
 
-		if( Input.GetKey( Right ))
+		if( Input.GetKey( Right ) && pullingIntoGrapple == false)
 		{
 			normalizedHorizontalSpeed = 1;
 			if( transform.localScale.x < 0f )
@@ -161,7 +163,7 @@ public class PlayerController : MonoBehaviour
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Player_Run" ) );
 		}
-		else if(Input.GetKey( Left ))
+		else if(Input.GetKey( Left ) && pullingIntoGrapple == false)
 		{
 			normalizedHorizontalSpeed = -1;
 			if( transform.localScale.x > 0f )
@@ -194,31 +196,25 @@ public class PlayerController : MonoBehaviour
 				if(currentDistanceToGrapple < 1)
 				{
 
-
 				} else
 				{
 					transform.position = Vector3.MoveTowards(transform.position,obj.transform.position,grapplePullSpeed);
 				}
-
-
-
-
 			}
+		}
 
-			if(Input.GetKeyDown(Down))
-			{
-				pullingIntoGrapple = false;
-				freezeGravity = false;
-			}
-
+		if(Input.GetKeyDown(Down))
+		{
+			pullingIntoGrapple = false;
+			freezeGravity = false;
 		}
 
     
     	//Shooting Projectile
-		if (Input.GetKeyDown (ShootArrow) || Input.GetKeyDown(ShootGrappleHook)) {
+		if (Input.GetKeyDown (ShootArrow) || Input.GetKeyDown(ShootSpecialArrow)) {
 
 			//If grapple button is clicked while already grappling
-			if (Input.GetKeyDown (ShootGrappleHook) && grappling == true)
+			if (Input.GetKeyDown (ShootSpecialArrow) && grappling == true && arrowType == "grapple")
 			{
 				//Remove current grapple
 				var objects = GameObject.FindGameObjectsWithTag("Grapple");
@@ -226,9 +222,11 @@ public class PlayerController : MonoBehaviour
 				foreach (var obj in objects) {
 					Destroy (obj);
 				}
+				pullingIntoGrapple = false;
+				freezeGravity = false;
 				grappling = false;
 			}
-		else if (grappling == false && numberOfArrows > 0)
+			else if (grappling == false && numberOfArrows > 0)
 			{
 				//Get positions of mouse/player and draw ray
 				Vector3 mousePositionVector = new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane);
@@ -241,7 +239,7 @@ public class PlayerController : MonoBehaviour
 				numberOfArrows -= 1;
 
 				//Shoot the grapple
-				if (Input.GetKeyDown (ShootGrappleHook) && numberOfGrapples > 0)
+				if (Input.GetKeyDown (ShootSpecialArrow) && numberOfGrapples > 0 && arrowType == "grapple")
 				{
 
 					arrowScript arrowScriptInstance = arrowInstance.GetComponent<arrowScript>();
@@ -251,6 +249,16 @@ public class PlayerController : MonoBehaviour
 					numberOfGrapples -= 1;
 				}
 
+				if (Input.GetKeyDown (ShootSpecialArrow) && numberOfFire > 0 && arrowType == "fire")
+				{
+					arrowScript arrowScriptInstance = arrowInstance.GetComponent<arrowScript>();
+					arrowScriptInstance.arrowType = "fire";
+					arrowScriptInstance.tag = "Fire";
+					numberOfFire -= 1;
+				}
+
+
+				Debug.Log ("adding force");
 				//Add force to arrow object
 				Rigidbody2D arrowRigidBody = arrowInstance.GetComponent<Rigidbody2D>();
 				arrowRigidBody.AddForce((mousePositionWorldVector-controllerPosition) * projectileSpeed,ForceMode2D.Force);
@@ -260,7 +268,7 @@ public class PlayerController : MonoBehaviour
 				diff.Normalize();
 				float zRotation = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 				arrowRigidBody.transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
-			}
+			} 
 
 
 			if (numberOfArrows == 0)
@@ -332,6 +340,7 @@ public class PlayerController : MonoBehaviour
 					disableHang = false;
 
 			}
+				
 
 
 			// we can only jump whilst grounded
@@ -342,6 +351,19 @@ public class PlayerController : MonoBehaviour
 				_animator.Play( Animator.StringToHash( "Player_Jump" ) );
 				//curStamina -= staminaUsageJump;
 			}
+
+			if(Input.GetKeyDown(KeyCode.Alpha1))
+			{
+				//Grapple
+				arrowType = "grapple";
+			} else if (Input.GetKeyDown(KeyCode.Alpha2) && grappling == false)
+			{
+				
+				//Fire
+				arrowType = "fire";
+			}
+
+			
 
 
 
@@ -367,7 +389,6 @@ public class PlayerController : MonoBehaviour
 			// grab our current _velocity to use as a base for all calculations
 			_velocity = _controller.velocity;
 
-			OnGUI ();
 
 		}
     
@@ -380,6 +401,8 @@ public class PlayerController : MonoBehaviour
 		GUI.skin.font = font;
 		GUI.Label (new Rect (5, 30, 200, 25), "Arrows:    " + numberOfArrows);
 		GUI.Label (new Rect (5, 40, 200, 25), "Grapples:  " + numberOfGrapples);
+		GUI.Label (new Rect (5, 50, 200, 25), "Fire:  " + numberOfFire);
+		GUI.Label (new Rect (5, 60, 200, 25), "Arrow Type:  " + arrowType);
 	}
   
 

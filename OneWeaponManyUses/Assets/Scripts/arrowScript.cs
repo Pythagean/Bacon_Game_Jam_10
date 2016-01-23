@@ -10,6 +10,8 @@ public class arrowScript : MonoBehaviour {
 
 	public float arrowCollision = 1/2;
 	public LayerMask platformMask = 0;
+
+	private Animator _animator;
 	
 	public string arrowType = "normal";
 	private LineRenderer line;
@@ -35,7 +37,13 @@ public class arrowScript : MonoBehaviour {
 			//set the ending point of the line to the player
 			line.SetPosition(1, player.transform.position);
 		}
-		
+
+		if (arrowType == "fire")		
+		{
+			Debug.Log ("Fired Fire arrow");
+			_animator.Play( Animator.StringToHash( "arrow_fire" ) );	
+		}
+
 		//Detect Collisions
 		velocity = GetComponent<Rigidbody2D>().velocity;
 		_raycast = Physics2D.Raycast(transform.position,velocity, arrowCollision, platformMask);
@@ -61,6 +69,9 @@ public class arrowScript : MonoBehaviour {
 
 	void Awake ()
 	{
+
+		_animator = GetComponent<Animator>();
+
 		//Debug.Log ("Arrow created");
 		line = this.gameObject.AddComponent<LineRenderer>();
 		line.SetWidth(grappleStartWidth, grappleEndWidth);
