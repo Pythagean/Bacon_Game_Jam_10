@@ -1,0 +1,2767 @@
+fileFormatVersion: 2
+guid: af72c53498d93824288f8f73e370bfc3
+timeCreated: 1453446381
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: enemy_animations_0
+    21300002: enemy_animations_1
+    21300004: enemy_animations_2
+    21300006: enemy_animations_3
+    21300008: enemy_animations_4
+    21300010: enemy_animations_5
+    21300012: enemy_animations_6
+    21300014: enemy_animations_7
+    21300016: enemy_animations_8
+    21300018: enemy_animations_9
+    21300020: enemy_animations_10
+    21300022: enemy_animations_11
+    21300024: enemy_animations_12
+    21300026: enemy_animations_13
+    21300028: enemy_animations_14
+    21300030: enemy_animations_15
+    21300032: enemy_animations_16
+    21300034: enemy_animations_17
+    21300036: enemy_animations_18
+    21300038: enemy_animations_19
+    21300040: enemy_animations_20
+    21300042: enemy_animations_21
+    21300044: enemy_animations_22
+    21300046: enemy_animations_23
+    21300048: enemy_animations_24
+    21300050: enemy_animations_25
+    21300052: enemy_animations_26
+    21300054: enemy_animations_27
+    21300056: enemy_animations_28
+    21300058: enemy_animations_29
+    21300060: enemy_animations_30
+    21300062: enemy_animations_31
+    21300064: enemy_animations_32
+    21300066: enemy_animations_33
+    21300068: enemy_animations_34
+    21300070: enemy_animations_35
+    21300072: enemy_animations_36
+    21300074: enemy_animations_37
+    21300076: enemy_animations_38
+    21300078: enemy_animations_39
+    21300080: enemy_animations_40
+    21300082: enemy_animations_41
+    21300084: enemy_animations_42
+    21300086: enemy_animations_43
+    21300088: enemy_animations_44
+    21300090: enemy_animations_45
+    21300092: enemy_animations_46
+    21300094: enemy_animations_47
+    21300096: enemy_animations_48
+    21300098: enemy_animations_49
+    21300100: enemy_animations_50
+    21300102: enemy_animations_51
+    21300104: enemy_animations_52
+    21300106: enemy_animations_53
+    21300108: enemy_animations_54
+    21300110: enemy_animations_55
+    21300112: enemy_animations_56
+    21300114: enemy_animations_57
+    21300116: enemy_animations_58
+    21300118: enemy_animations_59
+    21300120: enemy_animations_60
+    21300122: enemy_animations_61
+    21300124: enemy_animations_62
+    21300126: enemy_animations_63
+    21300128: enemy_animations_64
+    21300130: enemy_animations_65
+    21300132: enemy_animations_66
+    21300134: enemy_animations_67
+    21300136: enemy_animations_68
+    21300138: enemy_animations_69
+    21300140: enemy_animations_70
+    21300142: enemy_animations_71
+    21300144: enemy_animations_72
+    21300146: enemy_animations_73
+    21300148: enemy_animations_74
+    21300150: enemy_animations_75
+    21300152: enemy_animations_76
+    21300154: enemy_animations_77
+    21300156: enemy_animations_78
+    21300158: enemy_animations_79
+    21300160: enemy_animations_80
+    21300162: enemy_animations_81
+    21300164: enemy_animations_82
+    21300166: enemy_animations_83
+    21300168: enemy_animations_84
+    21300170: enemy_animations_85
+    21300172: enemy_animations_86
+    21300174: enemy_animations_87
+    21300176: enemy_animations_88
+    21300178: enemy_animations_89
+    21300180: enemy_animations_90
+    21300182: enemy_animations_91
+    21300184: enemy_animations_92
+    21300186: enemy_animations_93
+    21300188: enemy_animations_94
+    21300190: enemy_animations_95
+    21300192: enemy_animations_96
+    21300194: enemy_animations_97
+    21300196: enemy_animations_98
+    21300198: enemy_animations_99
+    21300200: enemy_animations_100
+    21300202: enemy_animations_101
+    21300204: enemy_animations_102
+    21300206: enemy_animations_103
+    21300208: enemy_animations_104
+    21300210: enemy_animations_105
+    21300212: enemy_animations_106
+    21300214: enemy_animations_107
+    21300216: enemy_animations_108
+    21300218: enemy_animations_109
+    21300220: enemy_animations_110
+    21300222: enemy_animations_111
+    21300224: enemy_animations_112
+    21300226: enemy_animations_113
+    21300228: enemy_animations_114
+    21300230: enemy_animations_115
+    21300232: enemy_animations_116
+    21300234: enemy_animations_117
+    21300236: enemy_animations_118
+    21300238: enemy_animations_119
+    21300240: enemy_animations_120
+    21300242: enemy_animations_121
+    21300244: enemy_animations_122
+    21300246: enemy_animations_123
+    21300248: enemy_animations_124
+    21300250: enemy_animations_125
+    21300252: enemy_animations_126
+    21300254: enemy_animations_127
+    21300256: enemy_animations_128
+    21300258: enemy_animations_129
+    21300260: enemy_animations_130
+    21300262: enemy_animations_131
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: enemy_animations_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 33}
+        - {x: -31, y: 29}
+        - {x: -31, y: -1}
+        - {x: -27, y: -15}
+        - {x: -14, y: -36}
+        - {x: 17, y: -36}
+        - {x: 32, y: -12}
+        - {x: 32, y: 33}
+    - name: enemy_animations_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 37}
+        - {x: -32, y: 29}
+        - {x: -32, y: -8}
+        - {x: -13, y: -37}
+        - {x: 23, y: -37}
+        - {x: 33, y: -12}
+        - {x: 33, y: 35}
+        - {x: 32, y: 37}
+    - name: enemy_animations_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 36}
+        - {x: -32, y: 35}
+        - {x: -32, y: -10}
+        - {x: -17, y: -31}
+        - {x: -9, y: -38}
+        - {x: 33, y: -38}
+        - {x: 33, y: 36}
+    - name: enemy_animations_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 37}
+        - {x: -32, y: 36}
+        - {x: -32, y: -24}
+        - {x: -29, y: -37}
+        - {x: 27, y: -37}
+        - {x: 33, y: -13}
+        - {x: 33, y: 37}
+    - name: enemy_animations_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 35}
+        - {x: -32, y: -19}
+        - {x: -17, y: -37}
+        - {x: 11, y: -37}
+        - {x: 33, y: -19}
+        - {x: 33, y: 34}
+        - {x: 29, y: 35}
+    - name: enemy_animations_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 38}
+        - {x: -32, y: -19}
+        - {x: -29, y: -37}
+        - {x: 19, y: -37}
+        - {x: 33, y: -8}
+        - {x: 33, y: 38}
+    - name: enemy_animations_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 37}
+        - {x: -20, y: 37}
+        - {x: -32, y: 33}
+        - {x: -32, y: -16}
+        - {x: -15, y: -37}
+        - {x: 15, y: -37}
+        - {x: 33, y: -12}
+        - {x: 33, y: 26}
+        - {x: 32, y: 36}
+    - name: enemy_animations_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 37}
+        - {x: -32, y: -17}
+        - {x: -12, y: -37}
+        - {x: 26, y: -37}
+        - {x: 33, y: -17}
+        - {x: 33, y: 37}
+    - name: enemy_animations_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 36}
+        - {x: -32, y: -5}
+        - {x: -23, y: -38}
+        - {x: 19, y: -38}
+        - {x: 33, y: -16}
+        - {x: 33, y: 36}
+    - name: enemy_animations_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 944
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 13}
+        - {x: -33, y: -2}
+        - {x: -33, y: -37}
+        - {x: -32, y: -38}
+        - {x: 29, y: -38}
+        - {x: 37, y: -36}
+        - {x: 37, y: 8}
+        - {x: 35, y: 13}
+    - name: enemy_animations_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33, y: 27}
+        - {x: 15, y: 34}
+        - {x: -14, y: 34}
+        - {x: -25, y: 29}
+        - {x: -25, y: -31}
+        - {x: -11, y: -38}
+        - {x: 13, y: -38}
+        - {x: 39, y: -18}
+        - {x: 40, y: -6}
+        - {x: 40, y: 21}
+    - name: enemy_animations_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 15}
+        - {x: -35, y: 12}
+        - {x: -35, y: -37}
+        - {x: -29, y: -38}
+        - {x: 36, y: -38}
+        - {x: 36, y: 15}
+      - - {x: -40, y: 7}
+        - {x: -37, y: 8}
+        - {x: -37, y: 14}
+        - {x: -39, y: 16}
+        - {x: -40, y: 16}
+    - name: enemy_animations_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 13}
+        - {x: -33, y: -2}
+        - {x: -33, y: -37}
+        - {x: -32, y: -38}
+        - {x: 29, y: -38}
+        - {x: 37, y: -36}
+        - {x: 37, y: 8}
+        - {x: 35, y: 13}
+    - name: enemy_animations_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 15}
+        - {x: -32, y: 5}
+        - {x: -35, y: -15}
+        - {x: -35, y: -34}
+        - {x: -31, y: -37}
+        - {x: 27, y: -37}
+        - {x: 36, y: -29}
+        - {x: 36, y: 15}
+    - name: enemy_animations_14
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 25}
+        - {x: -25, y: -34}
+        - {x: -23, y: -38}
+        - {x: 37, y: -38}
+        - {x: 40, y: -37}
+        - {x: 40, y: 27}
+        - {x: 38, y: 34}
+        - {x: -15, y: 34}
+        - {x: -24, y: 27}
+    - name: enemy_animations_15
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 13}
+        - {x: -33, y: 1}
+        - {x: -33, y: -38}
+        - {x: 35, y: -38}
+        - {x: 37, y: -33}
+        - {x: 37, y: 5}
+        - {x: 32, y: 13}
+      - - {x: -40, y: 8}
+        - {x: -37, y: 9}
+        - {x: -37, y: 15}
+        - {x: -39, y: 17}
+        - {x: -40, y: 17}
+    - name: enemy_animations_16
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 13}
+        - {x: -31, y: 4}
+        - {x: -31, y: -35}
+        - {x: -27, y: -38}
+        - {x: 37, y: -38}
+        - {x: 37, y: 12}
+        - {x: 32, y: 13}
+    - name: enemy_animations_17
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 13}
+        - {x: -32, y: 8}
+        - {x: -32, y: -38}
+        - {x: 33, y: -38}
+        - {x: 37, y: -37}
+        - {x: 37, y: 11}
+        - {x: 31, y: 13}
+    - name: enemy_animations_18
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 13}
+        - {x: -32, y: -8}
+        - {x: -32, y: -37}
+        - {x: -30, y: -38}
+        - {x: 30, y: -38}
+        - {x: 37, y: -36}
+        - {x: 37, y: 5}
+        - {x: 35, y: 13}
+    - name: enemy_animations_19
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 13}
+        - {x: -31, y: 10}
+        - {x: -31, y: -38}
+        - {x: 33, y: -38}
+        - {x: 40, y: -29}
+        - {x: 40, y: 10}
+        - {x: 32, y: 13}
+    - name: enemy_animations_20
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 12}
+        - {x: 24, y: 13}
+        - {x: -16, y: 13}
+        - {x: -31, y: 8}
+        - {x: -31, y: -38}
+        - {x: 39, y: -38}
+        - {x: 40, y: -36}
+        - {x: 40, y: -5}
+        - {x: 39, y: 4}
+    - name: enemy_animations_21
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 864
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 13}
+        - {x: -26, y: 13}
+        - {x: -32, y: 8}
+        - {x: -32, y: -38}
+        - {x: 40, y: -38}
+        - {x: 40, y: 4}
+    - name: enemy_animations_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 35}
+        - {x: -36, y: 25}
+        - {x: -36, y: -16}
+        - {x: -31, y: -31}
+        - {x: -13, y: -38}
+        - {x: 19, y: -38}
+        - {x: 32, y: -23}
+        - {x: 32, y: 33}
+        - {x: 31, y: 35}
+    - name: enemy_animations_23
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 37}
+        - {x: -24, y: 37}
+        - {x: -31, y: 34}
+        - {x: -31, y: -9}
+        - {x: -24, y: -34}
+        - {x: -15, y: -38}
+        - {x: 16, y: -38}
+        - {x: 35, y: -16}
+        - {x: 35, y: 24}
+        - {x: 23, y: 33}
+    - name: enemy_animations_24
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 37}
+        - {x: -35, y: 19}
+        - {x: -35, y: -18}
+        - {x: -28, y: -30}
+        - {x: 22, y: -30}
+        - {x: 40, y: -13}
+        - {x: 40, y: 26}
+        - {x: 13, y: 37}
+    - name: enemy_animations_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 36}
+        - {x: -10, y: 31}
+        - {x: -38, y: 13}
+        - {x: -38, y: -21}
+        - {x: -31, y: -35}
+        - {x: 29, y: -35}
+        - {x: 40, y: -18}
+        - {x: 40, y: 18}
+        - {x: 21, y: 36}
+    - name: enemy_animations_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 36}
+        - {x: -31, y: 16}
+        - {x: -31, y: -39}
+        - {x: 40, y: -39}
+        - {x: 40, y: 23}
+        - {x: 25, y: 36}
+    - name: enemy_animations_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 34}
+        - {x: -26, y: 34}
+        - {x: -40, y: 14}
+        - {x: -40, y: -34}
+        - {x: -24, y: -38}
+        - {x: 22, y: -38}
+        - {x: 27, y: -32}
+        - {x: 36, y: -4}
+        - {x: 36, y: 23}
+    - name: enemy_animations_28
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 29}
+        - {x: -36, y: 24}
+        - {x: -36, y: -21}
+        - {x: -30, y: -36}
+        - {x: 9, y: -36}
+        - {x: 31, y: -29}
+        - {x: 31, y: 28}
+        - {x: 26, y: 29}
+    - name: enemy_animations_29
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 31}
+        - {x: -34, y: 13}
+        - {x: -34, y: -38}
+        - {x: 30, y: -38}
+        - {x: 35, y: -30}
+        - {x: 35, y: 28}
+        - {x: 31, y: 31}
+    - name: enemy_animations_30
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 30}
+        - {x: -33, y: 22}
+        - {x: -33, y: -25}
+        - {x: -24, y: -30}
+        - {x: -7, y: -38}
+        - {x: 28, y: -38}
+        - {x: 32, y: -24}
+        - {x: 32, y: 26}
+        - {x: 30, y: 30}
+    - name: enemy_animations_31
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 34}
+        - {x: -34, y: 31}
+        - {x: -34, y: -20}
+        - {x: -21, y: -40}
+        - {x: 18, y: -40}
+        - {x: 33, y: -32}
+        - {x: 33, y: 34}
+    - name: enemy_animations_32
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 784
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 40}
+        - {x: -33, y: 36}
+        - {x: -33, y: -31}
+        - {x: -19, y: -37}
+        - {x: 14, y: -37}
+        - {x: 17, y: -36}
+        - {x: 36, y: -5}
+        - {x: 36, y: 33}
+        - {x: 32, y: 40}
+    - name: enemy_animations_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 36}
+        - {x: -39, y: 33}
+        - {x: -40, y: 31}
+        - {x: -40, y: -14}
+        - {x: -27, y: -39}
+        - {x: 10, y: -39}
+        - {x: 23, y: -33}
+        - {x: 23, y: 30}
+        - {x: 14, y: 36}
+      - - {x: 35, y: 20}
+        - {x: 35, y: 8}
+        - {x: 39, y: 4}
+        - {x: 40, y: 4}
+        - {x: 40, y: 24}
+        - {x: 39, y: 24}
+    - name: enemy_animations_34
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 39}
+        - {x: -23, y: 39}
+        - {x: -40, y: 38}
+        - {x: -40, y: -38}
+        - {x: -35, y: -39}
+        - {x: 21, y: -39}
+        - {x: 25, y: -32}
+        - {x: 25, y: 29}
+    - name: enemy_animations_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 37}
+        - {x: -40, y: 26}
+        - {x: -40, y: 2}
+        - {x: -30, y: -19}
+        - {x: -18, y: -34}
+        - {x: -18, y: -39}
+        - {x: 21, y: -39}
+        - {x: 27, y: -36}
+        - {x: 27, y: 37}
+    - name: enemy_animations_36
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 36}
+        - {x: -38, y: 32}
+        - {x: -38, y: -11}
+        - {x: -18, y: -38}
+        - {x: 10, y: -38}
+        - {x: 30, y: -16}
+        - {x: 30, y: 34}
+        - {x: 22, y: 36}
+    - name: enemy_animations_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 39}
+        - {x: -21, y: 33}
+        - {x: -24, y: 22}
+        - {x: -24, y: -26}
+        - {x: -15, y: -38}
+        - {x: 33, y: -38}
+        - {x: 40, y: -8}
+        - {x: 40, y: 28}
+        - {x: 19, y: 39}
+    - name: enemy_animations_38
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 38}
+        - {x: -24, y: 24}
+        - {x: -24, y: -28}
+        - {x: -23, y: -38}
+        - {x: 21, y: -38}
+        - {x: 40, y: -23}
+        - {x: 40, y: 31}
+        - {x: 24, y: 38}
+      - - {x: -40, y: 19}
+        - {x: -40, y: 1}
+        - {x: -35, y: 1}
+        - {x: -35, y: 19}
+    - name: enemy_animations_39
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 40}
+        - {x: -24, y: 36}
+        - {x: -24, y: -33}
+        - {x: -14, y: -38}
+        - {x: 40, y: -38}
+        - {x: 40, y: 37}
+        - {x: 32, y: 40}
+      - - {x: -40, y: 11}
+        - {x: -40, y: 2}
+        - {x: -37, y: 2}
+        - {x: -35, y: 4}
+        - {x: -35, y: 6}
+        - {x: -39, y: 11}
+    - name: enemy_animations_40
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 36}
+        - {x: -33, y: 30}
+        - {x: -33, y: -33}
+        - {x: -17, y: -38}
+        - {x: 23, y: -38}
+        - {x: 33, y: -24}
+        - {x: 33, y: 36}
+      - - {x: -40, y: 17}
+        - {x: -40, y: -3}
+        - {x: -37, y: -2}
+        - {x: -35, y: 0}
+        - {x: -35, y: 11}
+        - {x: -37, y: 17}
+    - name: enemy_animations_41
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 36}
+        - {x: -5, y: 36}
+        - {x: -26, y: 32}
+        - {x: -37, y: 20}
+        - {x: -37, y: 3}
+        - {x: -27, y: -25}
+        - {x: -21, y: -31}
+        - {x: -3, y: -40}
+        - {x: 27, y: -40}
+        - {x: 34, y: -18}
+        - {x: 34, y: 18}
+        - {x: 24, y: 34}
+    - name: enemy_animations_42
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 36}
+        - {x: -39, y: 23}
+        - {x: -39, y: -9}
+        - {x: -26, y: -27}
+        - {x: -13, y: -40}
+        - {x: 27, y: -40}
+        - {x: 34, y: -39}
+        - {x: 34, y: 22}
+        - {x: 30, y: 36}
+    - name: enemy_animations_43
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 38}
+        - {x: -24, y: 38}
+        - {x: -30, y: 36}
+        - {x: -38, y: 22}
+        - {x: -38, y: -3}
+        - {x: -23, y: -26}
+        - {x: -11, y: -40}
+        - {x: 29, y: -40}
+        - {x: 34, y: -27}
+        - {x: 34, y: 22}
+        - {x: 33, y: 33}
+    - name: enemy_animations_44
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 704
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 38}
+        - {x: -38, y: 22}
+        - {x: -38, y: -6}
+        - {x: -25, y: -36}
+        - {x: 27, y: -36}
+        - {x: 34, y: -3}
+        - {x: 34, y: 23}
+        - {x: 20, y: 38}
+    - name: enemy_animations_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 36}
+        - {x: -39, y: 34}
+        - {x: -39, y: -8}
+        - {x: -20, y: -38}
+        - {x: 24, y: -38}
+        - {x: 29, y: -25}
+        - {x: 29, y: 36}
+    - name: enemy_animations_46
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 39}
+        - {x: -40, y: 24}
+        - {x: -40, y: -7}
+        - {x: -8, y: -38}
+        - {x: 31, y: -38}
+        - {x: 31, y: 39}
+      - - {x: 37, y: 20}
+        - {x: 34, y: 17}
+        - {x: 34, y: 3}
+        - {x: 36, y: -2}
+        - {x: 40, y: -2}
+        - {x: 40, y: 20}
+    - name: enemy_animations_47
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 37}
+        - {x: -40, y: 28}
+        - {x: -40, y: -26}
+        - {x: -29, y: -38}
+        - {x: 21, y: -38}
+        - {x: 26, y: -35}
+        - {x: 26, y: 37}
+    - name: enemy_animations_48
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 33}
+        - {x: -31, y: 30}
+        - {x: -31, y: -13}
+        - {x: -12, y: -38}
+        - {x: 31, y: -38}
+        - {x: 34, y: -29}
+        - {x: 34, y: 33}
+    - name: enemy_animations_49
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 33}
+        - {x: 17, y: 34}
+        - {x: -20, y: 34}
+        - {x: -28, y: 32}
+        - {x: -33, y: 28}
+        - {x: -33, y: 0}
+        - {x: -25, y: -31}
+        - {x: -17, y: -38}
+        - {x: 19, y: -38}
+        - {x: 25, y: -37}
+        - {x: 32, y: -12}
+        - {x: 33, y: -5}
+        - {x: 33, y: 25}
+    - name: enemy_animations_50
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 34}
+        - {x: -33, y: -38}
+        - {x: 19, y: -38}
+        - {x: 33, y: -31}
+        - {x: 33, y: 29}
+        - {x: 19, y: 34}
+    - name: enemy_animations_51
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 36}
+        - {x: -39, y: 24}
+        - {x: -39, y: -9}
+        - {x: -21, y: -38}
+        - {x: 12, y: -38}
+        - {x: 28, y: -21}
+        - {x: 28, y: 36}
+    - name: enemy_animations_52
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 37}
+        - {x: -38, y: 23}
+        - {x: -38, y: -2}
+        - {x: -29, y: -22}
+        - {x: -15, y: -38}
+        - {x: 13, y: -38}
+        - {x: 30, y: -16}
+        - {x: 30, y: 33}
+        - {x: 19, y: 37}
+    - name: enemy_animations_53
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 40}
+        - {x: -30, y: 31}
+        - {x: -30, y: -36}
+        - {x: -28, y: -37}
+        - {x: 25, y: -37}
+        - {x: 37, y: -14}
+        - {x: 37, y: 40}
+    - name: enemy_animations_54
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: -34}
+        - {x: 16, y: -35}
+        - {x: 20, y: -35}
+        - {x: 29, y: -33}
+        - {x: 40, y: -22}
+        - {x: 40, y: 34}
+        - {x: 38, y: 40}
+        - {x: -13, y: 40}
+        - {x: -26, y: 27}
+        - {x: -26, y: -18}
+        - {x: -12, y: -37}
+        - {x: 6, y: -37}
+        - {x: 10, y: -33}
+        - {x: 10, y: -29}
+        - {x: 10, y: -31}
+    - name: enemy_animations_55
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 624
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 36}
+        - {x: -40, y: 27}
+        - {x: -40, y: -3}
+        - {x: -39, y: -3}
+        - {x: -35, y: 0}
+        - {x: -32, y: -12}
+        - {x: -25, y: -25}
+        - {x: -16, y: -38}
+        - {x: 11, y: -38}
+        - {x: 28, y: -15}
+        - {x: 28, y: 35}
+        - {x: 21, y: 36}
+    - name: enemy_animations_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 34}
+        - {x: -32, y: 31}
+        - {x: -32, y: -30}
+        - {x: -12, y: -38}
+        - {x: 22, y: -38}
+        - {x: 33, y: -19}
+        - {x: 33, y: 31}
+        - {x: 24, y: 34}
+    - name: enemy_animations_57
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 33}
+        - {x: -32, y: 31}
+        - {x: -32, y: -22}
+        - {x: -23, y: -38}
+        - {x: 25, y: -38}
+        - {x: 33, y: -20}
+        - {x: 33, y: 30}
+        - {x: 31, y: 33}
+    - name: enemy_animations_58
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 35}
+        - {x: -33, y: 32}
+        - {x: -33, y: -12}
+        - {x: -16, y: -38}
+        - {x: 22, y: -38}
+        - {x: 33, y: -11}
+        - {x: 33, y: 35}
+    - name: enemy_animations_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 34}
+        - {x: -33, y: 32}
+        - {x: -33, y: -16}
+        - {x: -15, y: -38}
+        - {x: 21, y: -38}
+        - {x: 33, y: -14}
+        - {x: 33, y: 33}
+        - {x: 32, y: 34}
+    - name: enemy_animations_60
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 34}
+        - {x: -33, y: 25}
+        - {x: -33, y: -11}
+        - {x: -24, y: -38}
+        - {x: 22, y: -38}
+        - {x: 33, y: -29}
+        - {x: 33, y: 29}
+        - {x: 30, y: 34}
+    - name: enemy_animations_61
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 34}
+        - {x: -32, y: 26}
+        - {x: -32, y: -32}
+        - {x: -16, y: -38}
+        - {x: 28, y: -38}
+        - {x: 33, y: -31}
+        - {x: 33, y: 34}
+    - name: enemy_animations_62
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 35}
+        - {x: -33, y: 26}
+        - {x: -33, y: -15}
+        - {x: -31, y: -23}
+        - {x: -15, y: -38}
+        - {x: 16, y: -38}
+        - {x: 24, y: -37}
+        - {x: 32, y: -14}
+        - {x: 32, y: 29}
+        - {x: 28, y: 35}
+    - name: enemy_animations_63
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 34}
+        - {x: -33, y: 33}
+        - {x: -33, y: -18}
+        - {x: -24, y: -38}
+        - {x: 26, y: -38}
+        - {x: 32, y: -11}
+        - {x: 32, y: 30}
+        - {x: 25, y: 34}
+    - name: enemy_animations_64
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 35}
+        - {x: -31, y: 35}
+        - {x: -33, y: 31}
+        - {x: -33, y: -32}
+        - {x: -18, y: -37}
+        - {x: 23, y: -37}
+        - {x: 28, y: -27}
+        - {x: 32, y: -14}
+        - {x: 32, y: 33}
+    - name: enemy_animations_65
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 35}
+        - {x: -32, y: 27}
+        - {x: -32, y: -33}
+        - {x: -18, y: -38}
+        - {x: 24, y: -38}
+        - {x: 33, y: -25}
+        - {x: 33, y: 30}
+        - {x: 26, y: 35}
+    - name: enemy_animations_66
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 34}
+        - {x: -32, y: 31}
+        - {x: -32, y: -15}
+        - {x: -31, y: -26}
+        - {x: -24, y: -38}
+        - {x: 14, y: -38}
+        - {x: 33, y: -32}
+        - {x: 33, y: 33}
+        - {x: 30, y: 34}
+    - name: enemy_animations_67
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 544
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 35}
+        - {x: -28, y: 35}
+        - {x: -32, y: 34}
+        - {x: -32, y: -18}
+        - {x: -23, y: -38}
+        - {x: 16, y: -38}
+        - {x: 31, y: -28}
+        - {x: 33, y: -6}
+        - {x: 33, y: 33}
+    - name: enemy_animations_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 31}
+        - {x: -33, y: 28}
+        - {x: -33, y: -12}
+        - {x: -24, y: -37}
+        - {x: 18, y: -37}
+        - {x: 33, y: -23}
+        - {x: 33, y: 26}
+        - {x: 25, y: 31}
+    - name: enemy_animations_69
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 31}
+        - {x: -24, y: 31}
+        - {x: -32, y: 25}
+        - {x: -32, y: -24}
+        - {x: -15, y: -38}
+        - {x: 17, y: -38}
+        - {x: 32, y: -23}
+        - {x: 33, y: -7}
+        - {x: 33, y: 24}
+    - name: enemy_animations_70
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33, y: 25}
+        - {x: 27, y: 32}
+        - {x: -23, y: 32}
+        - {x: -33, y: 23}
+        - {x: -33, y: -24}
+        - {x: -15, y: -38}
+        - {x: 17, y: -38}
+        - {x: 26, y: -30}
+        - {x: 32, y: -14}
+        - {x: 33, y: -10}
+    - name: enemy_animations_71
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 31}
+        - {x: -33, y: 27}
+        - {x: -33, y: -3}
+        - {x: -31, y: -17}
+        - {x: -14, y: -36}
+        - {x: 11, y: -36}
+        - {x: 17, y: -35}
+        - {x: 30, y: -18}
+        - {x: 33, y: -10}
+        - {x: 33, y: 31}
+    - name: enemy_animations_72
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 31}
+        - {x: -33, y: 21}
+        - {x: -33, y: -27}
+        - {x: -5, y: -38}
+        - {x: 17, y: -38}
+        - {x: 33, y: -17}
+        - {x: 33, y: 26}
+        - {x: 25, y: 31}
+    - name: enemy_animations_73
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 31}
+        - {x: -33, y: 28}
+        - {x: -33, y: -14}
+        - {x: -24, y: -34}
+        - {x: -5, y: -38}
+        - {x: 17, y: -38}
+        - {x: 33, y: -18}
+        - {x: 33, y: 26}
+        - {x: 28, y: 31}
+    - name: enemy_animations_74
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 37}
+        - {x: -24, y: 37}
+        - {x: -30, y: 26}
+        - {x: -33, y: -5}
+        - {x: -33, y: -18}
+        - {x: -21, y: -40}
+        - {x: 22, y: -40}
+        - {x: 38, y: 2}
+        - {x: 38, y: 24}
+        - {x: 30, y: 34}
+    - name: enemy_animations_75
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 39}
+        - {x: -33, y: -39}
+        - {x: 16, y: -39}
+        - {x: 38, y: -24}
+        - {x: 38, y: 39}
+    - name: enemy_animations_76
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 37}
+        - {x: 10, y: 40}
+        - {x: -24, y: 40}
+        - {x: -30, y: 29}
+        - {x: -34, y: 20}
+        - {x: -34, y: -22}
+        - {x: -25, y: -39}
+        - {x: 9, y: -39}
+        - {x: 10, y: -38}
+        - {x: 27, y: -20}
+        - {x: 38, y: 8}
+        - {x: 38, y: 23}
+    - name: enemy_animations_77
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 39}
+        - {x: -34, y: 34}
+        - {x: -34, y: -22}
+        - {x: -26, y: -39}
+        - {x: 18, y: -39}
+        - {x: 38, y: -7}
+        - {x: 38, y: 20}
+        - {x: 19, y: 39}
+    - name: enemy_animations_78
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 39}
+        - {x: -33, y: 21}
+        - {x: -33, y: -25}
+        - {x: -23, y: -39}
+        - {x: 18, y: -39}
+        - {x: 38, y: -21}
+        - {x: 38, y: 27}
+        - {x: 34, y: 39}
+    - name: enemy_animations_79
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 464
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 40}
+        - {x: -24, y: 40}
+        - {x: -30, y: 29}
+        - {x: -34, y: 4}
+        - {x: -34, y: -19}
+        - {x: -18, y: -39}
+        - {x: 20, y: -39}
+        - {x: 38, y: -12}
+        - {x: 38, y: 34}
+        - {x: 30, y: 37}
+    - name: enemy_animations_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 35}
+        - {x: -33, y: 33}
+        - {x: -33, y: -25}
+        - {x: -32, y: -29}
+        - {x: -17, y: -32}
+        - {x: 30, y: -32}
+        - {x: 33, y: -16}
+        - {x: 33, y: 35}
+    - name: enemy_animations_81
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 34}
+        - {x: -33, y: -17}
+        - {x: -29, y: -33}
+        - {x: 23, y: -33}
+        - {x: 35, y: -27}
+        - {x: 35, y: 34}
+    - name: enemy_animations_82
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 36}
+        - {x: -26, y: 36}
+        - {x: -33, y: 33}
+        - {x: -33, y: -13}
+        - {x: -25, y: -34}
+        - {x: -9, y: -38}
+        - {x: 19, y: -38}
+        - {x: 37, y: -17}
+        - {x: 37, y: 26}
+        - {x: 36, y: 30}
+    - name: enemy_animations_83
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 36}
+        - {x: -33, y: 34}
+        - {x: -33, y: -12}
+        - {x: -9, y: -40}
+        - {x: 17, y: -40}
+        - {x: 33, y: -18}
+        - {x: 33, y: 32}
+        - {x: 29, y: 36}
+    - name: enemy_animations_84
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 35}
+        - {x: -33, y: -18}
+        - {x: -21, y: -33}
+        - {x: 25, y: -33}
+        - {x: 33, y: -25}
+        - {x: 33, y: 31}
+        - {x: 32, y: 35}
+    - name: enemy_animations_85
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 35}
+        - {x: -33, y: 33}
+        - {x: -33, y: -19}
+        - {x: -28, y: -32}
+        - {x: 28, y: -32}
+        - {x: 33, y: -5}
+        - {x: 33, y: 35}
+    - name: enemy_animations_86
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 34}
+        - {x: -35, y: 33}
+        - {x: -35, y: -27}
+        - {x: -22, y: -32}
+        - {x: -17, y: -33}
+        - {x: 24, y: -33}
+        - {x: 32, y: -28}
+        - {x: 32, y: 34}
+    - name: enemy_animations_87
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 36}
+        - {x: -37, y: 24}
+        - {x: -37, y: -23}
+        - {x: -27, y: -39}
+        - {x: 20, y: -39}
+        - {x: 33, y: -25}
+        - {x: 33, y: 32}
+        - {x: 32, y: 36}
+    - name: enemy_animations_88
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 36}
+        - {x: -34, y: -39}
+        - {x: 8, y: -39}
+        - {x: 29, y: -29}
+        - {x: 33, y: -14}
+        - {x: 33, y: 36}
+    - name: enemy_animations_89
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 384
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 35}
+        - {x: -33, y: 26}
+        - {x: -33, y: -12}
+        - {x: -23, y: -34}
+        - {x: 27, y: -34}
+        - {x: 33, y: -27}
+        - {x: 33, y: 28}
+        - {x: 22, y: 35}
+    - name: enemy_animations_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 35}
+        - {x: -37, y: -28}
+        - {x: -14, y: -38}
+        - {x: 16, y: -38}
+        - {x: 30, y: -12}
+        - {x: 30, y: 35}
+    - name: enemy_animations_91
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 304
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 39}
+        - {x: -34, y: 34}
+        - {x: -39, y: 27}
+        - {x: -39, y: 1}
+        - {x: -27, y: -31}
+        - {x: -15, y: -38}
+        - {x: 12, y: -38}
+        - {x: 20, y: -36}
+        - {x: 31, y: -21}
+        - {x: 31, y: 29}
+        - {x: 29, y: 39}
+    - name: enemy_animations_92
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 304
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 36}
+        - {x: -40, y: 30}
+        - {x: -40, y: -7}
+        - {x: -14, y: -38}
+        - {x: 20, y: -38}
+        - {x: 26, y: -25}
+        - {x: 26, y: 31}
+        - {x: 24, y: 36}
+    - name: enemy_animations_93
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 304
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 36}
+        - {x: -21, y: 36}
+        - {x: -40, y: 24}
+        - {x: -40, y: -1}
+        - {x: -17, y: -34}
+        - {x: -7, y: -38}
+        - {x: 15, y: -38}
+        - {x: 23, y: -26}
+        - {x: 24, y: -22}
+        - {x: 24, y: 24}
+    - name: enemy_animations_94
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 304
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 36}
+        - {x: -40, y: 30}
+        - {x: -40, y: -7}
+        - {x: -14, y: -38}
+        - {x: 20, y: -38}
+        - {x: 26, y: -25}
+        - {x: 26, y: 31}
+        - {x: 24, y: 36}
+    - name: enemy_animations_95
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 304
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 39}
+        - {x: -39, y: 25}
+        - {x: -39, y: -6}
+        - {x: -15, y: -38}
+        - {x: 16, y: -38}
+        - {x: 31, y: -11}
+        - {x: 31, y: 35}
+        - {x: 23, y: 39}
+    - name: enemy_animations_96
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 304
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 35}
+        - {x: -25, y: 32}
+        - {x: -37, y: 22}
+        - {x: -37, y: -8}
+        - {x: -19, y: -38}
+        - {x: 20, y: -38}
+        - {x: 30, y: -29}
+        - {x: 30, y: 33}
+        - {x: 29, y: 35}
+    - name: enemy_animations_97
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 304
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 22}
+        - {x: -37, y: 6}
+        - {x: -37, y: -31}
+        - {x: -14, y: -40}
+        - {x: 35, y: -40}
+        - {x: 36, y: -37}
+        - {x: 36, y: 21}
+        - {x: 30, y: 22}
+    - name: enemy_animations_98
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 34}
+        - {x: -32, y: 25}
+        - {x: -32, y: -5}
+        - {x: -31, y: -12}
+        - {x: -16, y: -39}
+        - {x: 9, y: -39}
+        - {x: 22, y: -34}
+        - {x: 34, y: -16}
+        - {x: 34, y: 28}
+        - {x: 24, y: 34}
+    - name: enemy_animations_99
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 35}
+        - {x: -24, y: 35}
+        - {x: -33, y: 31}
+        - {x: -33, y: -30}
+        - {x: -20, y: -40}
+        - {x: 25, y: -40}
+        - {x: 31, y: -34}
+        - {x: 33, y: -18}
+        - {x: 33, y: 32}
+    - name: enemy_animations_100
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 34}
+        - {x: -31, y: 28}
+        - {x: -31, y: -3}
+        - {x: -24, y: -32}
+        - {x: -13, y: -40}
+        - {x: 28, y: -40}
+        - {x: 35, y: -17}
+        - {x: 35, y: 25}
+        - {x: 28, y: 34}
+    - name: enemy_animations_101
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: 34}
+        - {x: -27, y: 34}
+        - {x: -31, y: 32}
+        - {x: -31, y: -34}
+        - {x: -26, y: -40}
+        - {x: 29, y: -40}
+        - {x: 32, y: -36}
+        - {x: 35, y: -19}
+        - {x: 35, y: 33}
+    - name: enemy_animations_102
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 39}
+        - {x: -37, y: -13}
+        - {x: -26, y: -40}
+        - {x: 32, y: -40}
+        - {x: 32, y: 39}
+    - name: enemy_animations_103
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 33}
+        - {x: 21, y: 38}
+        - {x: 18, y: 40}
+        - {x: -12, y: 40}
+        - {x: -29, y: 33}
+        - {x: -37, y: 26}
+        - {x: -37, y: 1}
+        - {x: -16, y: -39}
+        - {x: -12, y: -40}
+        - {x: 30, y: -40}
+        - {x: 31, y: -35}
+        - {x: 31, y: 24}
+    - name: enemy_animations_104
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 40}
+        - {x: -10, y: 40}
+        - {x: -35, y: 31}
+        - {x: -35, y: 1}
+        - {x: -12, y: -40}
+        - {x: 27, y: -40}
+        - {x: 34, y: -9}
+        - {x: 34, y: 20}
+        - {x: 31, y: 32}
+    - name: enemy_animations_105
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 40}
+        - {x: -36, y: 40}
+        - {x: -36, y: -25}
+        - {x: -8, y: -40}
+        - {x: 17, y: -40}
+        - {x: 24, y: -30}
+        - {x: 32, y: -18}
+        - {x: 32, y: 30}
+    - name: enemy_animations_106
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 40}
+        - {x: -37, y: 26}
+        - {x: -37, y: -6}
+        - {x: -21, y: -40}
+        - {x: 16, y: -40}
+        - {x: 31, y: -30}
+        - {x: 31, y: 35}
+        - {x: 27, y: 40}
+    - name: enemy_animations_107
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 40}
+        - {x: -37, y: 31}
+        - {x: -37, y: -20}
+        - {x: -22, y: -40}
+        - {x: 31, y: -40}
+        - {x: 31, y: 28}
+        - {x: 25, y: 40}
+    - name: enemy_animations_108
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 40}
+        - {x: -35, y: 31}
+        - {x: -35, y: 0}
+        - {x: -11, y: -40}
+        - {x: 32, y: -40}
+        - {x: 34, y: -30}
+        - {x: 34, y: 40}
+    - name: enemy_animations_109
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 224
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 40}
+        - {x: -32, y: 38}
+        - {x: -36, y: 27}
+        - {x: -36, y: 3}
+        - {x: -25, y: -18}
+        - {x: -4, y: -40}
+        - {x: 22, y: -40}
+        - {x: 32, y: -30}
+        - {x: 32, y: 40}
+    - name: enemy_animations_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 34}
+        - {x: -33, y: 32}
+        - {x: -33, y: -13}
+        - {x: -27, y: -39}
+        - {x: 23, y: -39}
+        - {x: 33, y: -18}
+        - {x: 33, y: 33}
+        - {x: 28, y: 34}
+    - name: enemy_animations_111
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 35}
+        - {x: -26, y: 35}
+        - {x: -34, y: 33}
+        - {x: -34, y: -30}
+        - {x: -24, y: -40}
+        - {x: 32, y: -40}
+    - name: enemy_animations_112
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 38}
+        - {x: -34, y: 34}
+        - {x: -37, y: 25}
+        - {x: -37, y: 8}
+        - {x: -30, y: -35}
+        - {x: -22, y: -40}
+        - {x: 25, y: -40}
+        - {x: 30, y: -29}
+        - {x: 30, y: 38}
+    - name: enemy_animations_113
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 35}
+        - {x: -35, y: 29}
+        - {x: -35, y: -6}
+        - {x: -24, y: -40}
+        - {x: 24, y: -40}
+        - {x: 31, y: -36}
+        - {x: 31, y: 33}
+        - {x: 27, y: 35}
+    - name: enemy_animations_114
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 29}
+        - {x: -32, y: 25}
+        - {x: -32, y: 1}
+        - {x: -29, y: -31}
+        - {x: -24, y: -40}
+        - {x: 18, y: -40}
+        - {x: 33, y: -32}
+        - {x: 33, y: 29}
+    - name: enemy_animations_115
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 32}
+        - {x: -36, y: 25}
+        - {x: -36, y: 2}
+        - {x: -29, y: -31}
+        - {x: -14, y: -40}
+        - {x: 18, y: -40}
+        - {x: 30, y: -16}
+        - {x: 30, y: 31}
+        - {x: 26, y: 32}
+    - name: enemy_animations_116
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 31}
+        - {x: -31, y: 27}
+        - {x: -31, y: -36}
+        - {x: -23, y: -40}
+        - {x: 29, y: -40}
+        - {x: 34, y: -27}
+        - {x: 34, y: 31}
+      - - {x: 5, y: 40}
+        - {x: 6, y: 37}
+        - {x: 16, y: 37}
+        - {x: 18, y: 39}
+        - {x: 18, y: 40}
+    - name: enemy_animations_117
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 28}
+        - {x: -39, y: 22}
+        - {x: -39, y: -40}
+        - {x: 25, y: -40}
+        - {x: 36, y: -23}
+        - {x: 36, y: 28}
+      - - {x: 3, y: 40}
+        - {x: 4, y: 37}
+        - {x: 11, y: 37}
+        - {x: 13, y: 39}
+        - {x: 13, y: 40}
+    - name: enemy_animations_118
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 29}
+        - {x: -34, y: 19}
+        - {x: -40, y: 4}
+        - {x: -40, y: -36}
+        - {x: -30, y: -40}
+        - {x: 26, y: -40}
+        - {x: 38, y: -30}
+        - {x: 38, y: 29}
+    - name: enemy_animations_119
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 31}
+        - {x: -31, y: 27}
+        - {x: -31, y: -36}
+        - {x: -23, y: -40}
+        - {x: 29, y: -40}
+        - {x: 34, y: -27}
+        - {x: 34, y: 31}
+    - name: enemy_animations_120
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 21}
+        - {x: -25, y: 14}
+        - {x: -25, y: -39}
+        - {x: -21, y: -40}
+        - {x: 40, y: -40}
+        - {x: 40, y: 15}
+        - {x: 34, y: 21}
+      - - {x: 4, y: 40}
+        - {x: 5, y: 37}
+        - {x: 17, y: 37}
+        - {x: 19, y: 39}
+        - {x: 19, y: 40}
+    - name: enemy_animations_121
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 144
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 21}
+        - {x: -40, y: 19}
+        - {x: -40, y: -40}
+        - {x: 24, y: -40}
+        - {x: 25, y: -35}
+        - {x: 25, y: 7}
+        - {x: 9, y: 21}
+      - - {x: 3, y: 40}
+        - {x: 4, y: 37}
+        - {x: 12, y: 37}
+        - {x: 14, y: 39}
+        - {x: 14, y: 40}
+    - name: enemy_animations_122
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: 31}
+        - {x: -39, y: -31}
+        - {x: 30, y: -31}
+        - {x: 39, y: -28}
+        - {x: 39, y: 22}
+        - {x: 35, y: 31}
+    - name: enemy_animations_123
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 28}
+        - {x: -28, y: 21}
+        - {x: -28, y: -12}
+        - {x: -21, y: -28}
+        - {x: 17, y: -28}
+        - {x: 28, y: -15}
+        - {x: 28, y: 23}
+        - {x: 14, y: 28}
+    - name: enemy_animations_124
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 35}
+        - {x: -15, y: 35}
+        - {x: -25, y: 33}
+        - {x: -25, y: -22}
+        - {x: -8, y: -35}
+        - {x: 14, y: -35}
+        - {x: 26, y: -9}
+        - {x: 26, y: 14}
+        - {x: 24, y: 26}
+    - name: enemy_animations_125
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 29}
+        - {x: -30, y: -28}
+        - {x: -24, y: -36}
+        - {x: 23, y: -36}
+        - {x: 29, y: -30}
+        - {x: 29, y: 21}
+        - {x: 27, y: 29}
+    - name: enemy_animations_126
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 32}
+        - {x: -29, y: -3}
+        - {x: -29, y: -36}
+        - {x: -25, y: -37}
+        - {x: 28, y: -37}
+        - {x: 30, y: -35}
+        - {x: 30, y: -3}
+        - {x: 17, y: 32}
+    - name: enemy_animations_127
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 28}
+        - {x: -33, y: 23}
+        - {x: -33, y: -28}
+        - {x: 31, y: -28}
+        - {x: 32, y: -26}
+        - {x: 32, y: 17}
+        - {x: 31, y: 28}
+    - name: enemy_animations_128
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 35}
+        - {x: -40, y: 32}
+        - {x: -40, y: -8}
+        - {x: -36, y: -35}
+        - {x: -17, y: -40}
+        - {x: 37, y: -40}
+        - {x: 40, y: -33}
+        - {x: 40, y: 35}
+    - name: enemy_animations_129
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 40}
+        - {x: -16, y: 39}
+        - {x: -12, y: 36}
+        - {x: -7, y: 36}
+        - {x: -3, y: 39}
+        - {x: -3, y: 40}
+    - name: enemy_animations_130
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 40}
+        - {x: -17, y: 38}
+        - {x: 36, y: -21}
+        - {x: 40, y: -21}
+        - {x: 40, y: 40}
+    - name: enemy_animations_131
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 64
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: 40}
+        - {x: -40, y: -21}
+        - {x: -38, y: -21}
+        - {x: -18, y: -1}
+        - {x: 16, y: 38}
+        - {x: 16, y: 40}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
