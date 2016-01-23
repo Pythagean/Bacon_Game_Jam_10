@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 	public KeyCode GrapplePull = KeyCode.Q;
 
 	private bool disableHang = false;
+	private bool pullingIntoGrapple = false;
+	private bool freezeGravity = false;
 
 	// movement config
 	public float gravity = -25f;
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
 	private bool grappling = false;
 	private bool grapplingHold = false;
 	private bool holdingLedge = false;
-	public int grapplePullSpeed = 15;
+	public float grapplePullSpeed = 0.2f;
 
 	public float height = 0.25f;
 	public float width = 0.3f;
@@ -176,12 +178,39 @@ public class PlayerController : MonoBehaviour
 		//Pulls player towards the grapple
 		if (Input.GetKey (GrapplePull)) 
 		{
+			pullingIntoGrapple = true;
+		}
+		if (pullingIntoGrapple)
+		{
 			var objects = GameObject.FindGameObjectsWithTag("Grapple");
 			var objectCount = objects.Length;
 			foreach (var obj in objects) {
-				transform.position = Vector3.MoveTowards(transform.position,obj.transform.position,(grapplePullSpeed * Time.deltaTime));
+				var currentDistanceToGrapple = Vector2.Distance(transform.position,obj.transform.position);
+				Debug.Log ("currentDist: " + currentDistanceToGrapple.ToString ());
+
+				freezeGravity = true;
+				if(currentDistanceToGrapple < 1)
+				{
+
+
+				} else
+				{
+					transform.position = Vector3.MoveTowards(transform.position,obj.transform.position,grapplePullSpeed);
+				}
+
+
+
+
 			}
+
+			if(Input.GetKeyDown(Down))
+			{
+				pullingIntoGrapple = false;
+				freezeGravity = false;
+			}
+
 		}
+
     
     	//Shooting Projectile
 		if (Input.GetKeyDown (ShootArrow) || Input.GetKeyDown(ShootGrappleHook)) {
@@ -318,8 +347,10 @@ public class PlayerController : MonoBehaviour
 			var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
 			_velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
 
+			if(freezeGravity == false)
+				_velocity.y += gravity * Time.deltaTime;
 			// apply gravity before moving
-			_velocity.y += gravity * Time.deltaTime;
+			
 
 			// if holding down bump up our movement amount and turn off one way platform detection for a frame.
 			// this lets uf jump down through one way platforms
