@@ -35,16 +35,16 @@ public class PlayerController : MonoBehaviour
   	//Health and Stamina config
 	//public GameObject health;
 	public float maxHealth = 100;
-  	public float maxStamina = 100;
+  	//public float maxStamina = 100;
   
   	public float curHealth;
-	public float curStamina;
+	//public float curStamina;
 
 	public LayerMask platformMask = 0;
   
   	public float healthRegen = 1f;
-	public float staminaRegen = 1f;
-  	private float staminaUsageJump = 15f;
+	//public float staminaRegen = 1f;
+  	//private float staminaUsageJump = 15f;
 
 	public int numberOfGrapples = 5;
 	public int numberOfArrows = 20;
@@ -79,6 +79,8 @@ public class PlayerController : MonoBehaviour
 
 	public float height = 0.25f;
 	public float width = 0.3f;
+
+	public Font font;
  
 	void Awake()
 	{
@@ -92,7 +94,7 @@ public class PlayerController : MonoBehaviour
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
     
 		curHealth = maxHealth;
-    	curStamina = maxStamina;
+    	//curStamina = maxStamina;
 		arrowList = new List<GameObject>();
 
 	}
@@ -138,16 +140,16 @@ public class PlayerController : MonoBehaviour
 			_velocity.y = 0;
     
       	//Stamina Regenetration
-		 if(curStamina > maxStamina - 1)
+		/* if(curStamina > maxStamina - 1)
 			curStamina = maxStamina;
 		else
-			curStamina += staminaRegen * Time.deltaTime;
+			curStamina += staminaRegen * Time.deltaTime;*/
 
 		//Health Regeneration
 		if (curHealth > maxHealth - 1)
 			curHealth = maxHealth;
 		else
-			curHealth += staminaRegen * Time.deltaTime;
+			curHealth += healthRegen * Time.deltaTime;
 
 
 		if( Input.GetKey( Right ))
@@ -286,7 +288,7 @@ public class PlayerController : MonoBehaviour
 
 
 				_animator.Play( Animator.StringToHash( "Player_Jump" ) );
-				curStamina -= staminaUsageJump;
+				//curStamina -= staminaUsageJump;
 				disableHang = true;
 				holdingLedge = false;
 			}
@@ -333,12 +335,12 @@ public class PlayerController : MonoBehaviour
 
 
 			// we can only jump whilst grounded
-			if( _controller.isGrounded && Input.GetKeyDown( Jump ) && curStamina > staminaUsageJump)
+			if( _controller.isGrounded && Input.GetKeyDown( Jump ))// && curStamina > staminaUsageJump)
 			{
 				_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 
 				_animator.Play( Animator.StringToHash( "Player_Jump" ) );
-				curStamina -= staminaUsageJump;
+				//curStamina -= staminaUsageJump;
 			}
 
 
@@ -365,6 +367,7 @@ public class PlayerController : MonoBehaviour
 			// grab our current _velocity to use as a base for all calculations
 			_velocity = _controller.velocity;
 
+			OnGUI ();
 
 		}
     
@@ -374,7 +377,9 @@ public class PlayerController : MonoBehaviour
 	}
 
 	void OnGUI() {
-			
+		GUI.skin.font = font;
+		GUI.Label (new Rect (5, 30, 200, 25), "Arrows:    " + numberOfArrows);
+		GUI.Label (new Rect (5, 40, 200, 25), "Grapples:  " + numberOfGrapples);
 	}
   
 

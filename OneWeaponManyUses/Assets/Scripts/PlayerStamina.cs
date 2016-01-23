@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class PlayerStamina : MonoBehaviour {
@@ -58,3 +58,4 @@ public class PlayerStamina : MonoBehaviour {
 	}
 
 }
+*/
