@@ -5,6 +5,7 @@ public class CameraFollow : MonoBehaviour {
 
 	public Transform target;
 	public float smoothing = 5f;
+	public bool camera = true;
 
 	Vector3 offset; 
 
@@ -15,7 +16,29 @@ public class CameraFollow : MonoBehaviour {
 
 	void LateUpdate ()
 	{
+
+
+
 		Vector3 targetCamPos = new Vector3(target.position.x + offset.x, transform.position.y, target.position.z + offset.z);
-		transform.position = Vector3.Lerp (transform.position, new Vector3 (targetCamPos.x , 0.0f , targetCamPos.z) , smoothing * Time.deltaTime);
+
+
+		if (camera)
+		{
+			if (targetCamPos.x > 0)
+			{
+				targetCamPos.x = 0;
+			}
+
+			transform.position = Vector3.Lerp (transform.position, new Vector3 (targetCamPos.x , -1.98f , targetCamPos.z) , smoothing * Time.deltaTime);
+		} else
+		{
+			if (targetCamPos.x > 0)
+			{
+				targetCamPos.x = -1.9f;
+			}
+
+			transform.position = Vector3.Lerp (transform.position, new Vector3 (targetCamPos.x-1.9f , 0.4f , targetCamPos.z) , smoothing * Time.deltaTime);
+		}
+
 	}
 }

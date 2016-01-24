@@ -11,13 +11,16 @@ public class arrowScript : MonoBehaviour {
 	public float arrowCollision = 0.1f;
 	public LayerMask platformMask = 0;
 	public LayerMask enemyMask = 0;
+	public LayerMask campfireMask = 0;
 
 	private Animator _animator;
+	private bool damageDisabled = false;
 	
 	public string arrowType = "normal";
 	private LineRenderer line;
 	private GameObject player;
 	private bool hasHitEnemy;
+	private bool hasHitCampfire;
 
 	// Line start width
 	private float grappleStartWidth = 0.1f;
@@ -27,10 +30,14 @@ public class arrowScript : MonoBehaviour {
 	public Vector3 velocity;
 	private RaycastHit2D _raycast;
 	private RaycastHit2D _raycastEnemy;
+	private RaycastHit2D _raycastCampfire;
 
 
 	private GameObject enemyHitGameObject;
 	private Vector3 enemyHitPosition;
+
+	private GameObject fireHitGameObject;
+	private Vector3 fireHitPosition;
 
 	//public 
 
@@ -58,23 +65,45 @@ public class arrowScript : MonoBehaviour {
 		_raycast = Physics2D.Raycast(transform.position, velocity, arrowCollision, platformMask);
 
 		_raycastEnemy = Physics2D.Raycast(transform.position,velocity, arrowCollision, enemyMask);
+		_raycastCampfire = Physics2D.Raycast(transform.position,velocity, arrowCollision, campfireMask);
 
-		Debug.DrawRay (transform.position, velocity / 20, Color.red, 2);
 
-		//If hit enemy detected
-		if (_raycastEnemy && !hasHitEnemy) 
+		//Debug.DrawRay (transform.position, velocity / 20, Color.red, 2);
+
+		//If hit campfire detected
+		if (_raycastCampfire && !hasHitCampfire && arrowType == "fire")
 		{
-
 			//Stops arrow and sets gravity to 0
 			GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 			GetComponent<Rigidbody2D>().gravityScale = 0;
 
-			enemyHitGameObject = _raycastEnemy.transform.gameObject;
+			fireHitGameObject = _raycastCampfire.transform.gameObject;
 			//enemyHitPosition = enemyHitGameObject.transform.position;
-			hasHitEnemy = true;
+			hasHitCampfire = true;
 
-			var enemyEnemyController = enemyHitGameObject.GetComponent<EnemyController> ();
-			enemyEnemyController.HitByArrow (arrowType);
+			var campfireCampfire = fireHitGameObject.GetComponent<Campfire> ();
+			campfireCampfire.onFire = true;
+
+			//Destroy (this.gameObject,2f);
+		}
+
+		//If hit enemy detected
+		if (_raycastEnemy && !hasHitEnemy) 
+		{
+			if (!damageDisabled)
+			{
+				//Stops arrow and sets gravity to 0
+				GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+				GetComponent<Rigidbody2D>().gravityScale = 0;
+
+				enemyHitGameObject = _raycastEnemy.transform.gameObject;
+				//enemyHitPosition = enemyHitGameObject.transform.position;
+				hasHitEnemy = true;
+
+				var enemyEnemyController = enemyHitGameObject.GetComponent<EnemyController> ();
+				enemyEnemyController.HitByArrow (arrowType);
+			}
+
 		}
 
 		if (enemyHitGameObject != null && hasHitEnemy)
@@ -105,6 +134,8 @@ public class arrowScript : MonoBehaviour {
 			//Stops arrow and sets gravity to 0
 			GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 			GetComponent<Rigidbody2D>().gravityScale = 0;
+			damageDisabled = true;
+
 		}
 
 
@@ -134,9 +165,9 @@ public class arrowScript : MonoBehaviour {
 		Color lineColor = new Color ();
 		//line.material.color = ColorUtility.TryParseHtmlString ("#F00", out lineColor);
 		//line.material.color = new Color32(redValue,blueValue,greenValue,alphaValue);
-		line.material.color = Color.gray;
+		line.material.color = Color.white;
 
-		line.SetColors(Color.black, Color.black);
+		line.SetColors(Color.white, Color.white);
 		//we need to see the line... 
 		//line.GetComponent.<Renderer>().enabled = true;
 		line.GetComponent<Renderer>().enabled = true;

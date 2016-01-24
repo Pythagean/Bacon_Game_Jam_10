@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
 
+	private AudioSource audioSource;
+	public AudioClip hitAudio;
+
 	private CharacterController2D _controller;
 	private Animator _animator;
 	private Vector3 _velocity;
@@ -37,9 +40,11 @@ public class EnemyController : MonoBehaviour
 	private GameObject player;
 
 	private RaycastHit2D _raycast;
+	private RaycastHit2D _raycastBlocking;
 	private Vector2 _raycastOrigin;
 	public LayerMask playerMask = 0;
-	public float agroZoneDistance = 3f;
+	public LayerMask blockingMask = 0;
+	public float agroZoneDistance = 2f;
 
 	private float normalizedHorizontalSpeed = 0;
 
@@ -59,6 +64,8 @@ public class EnemyController : MonoBehaviour
 
 		waitBeforeNextMove = Random.value * randomMultiplier;
 		wandering = true;
+
+		audioSource = GetComponent<AudioSource> ();
 	}
 
 	#region Event Listeners
@@ -203,39 +210,49 @@ public class EnemyController : MonoBehaviour
 
 		} else if(agro)
 		{
+			_raycastOrigin = new Vector2(transform.position.x, transform.position.y);
+
 			_animator.Play(Animator.StringToHash("Enemy_Attack"));
 
 			player = GameObject.FindGameObjectWithTag("Player");
 			var currentDistanceToPlayer = Vector2.Distance(transform.position,player.transform.position);
 			//Debug.Log ("currentDist: " + currentDistanceToPlayer.ToString ());
 
-			if (currentDistanceToPlayer > 3.5)
+			if (currentDistanceToPlayer > 2.5)
 			{
+				transform.localRotation = Quaternion.Euler (0, 0, 0);
 				wandering = true;
 				agro = false;
 			}
 
-			if (currentDistanceToPlayer < 1)
+			if (transform.position.x > player.transform.position.x) {
+				transform.localRotation = Quaternion.Euler (0, 180, 0);
+				_raycastBlocking = Physics2D.Raycast(_raycastOrigin, Vector2.left, 0.1f, blockingMask);
+			} else 
 			{
+				transform.localRotation = Quaternion.Euler (0, 0, 0);
+				_raycastBlocking = Physics2D.Raycast(_raycastOrigin, Vector2.right, 0.1f, blockingMask);
+			}
+
+			if (!_raycastBlocking)
+			{
+				var targetPoint = new Vector3 (player.transform.position.x, transform.position.y);
+				transform.position = Vector3.MoveTowards(transform.position, targetPoint, 0.05f);
+			}
+
+			if (currentDistanceToPlayer < 1 && transform.position.y >= (player.transform.position.y - 0.1f))
+			{
+				//Debug.Log ("DAMAGE");
 				if (timeBetweenDamagingPlayer < 0)
 				{
+					//Debug.Log ("DAMAGE");
 					player.GetComponent<PlayerController> ().damagePlayer (enemyStrength);
 					timeBetweenDamagingPlayer = 60;
 				} else {
+					//Debug.Log ("timeBetweenDamagingPlayer: " + timeBetweenDamagingPlayer.ToString ());
 					timeBetweenDamagingPlayer -= 1;
 				}
-
-
-				//StartCoroutine(WaitForSeconds (1));
-
 			}
-
-
-			var targetPoint = new Vector3 (player.transform.position.x, transform.position.y);
-			transform.position = Vector3.MoveTowards(transform.position, targetPoint, 0.05f);
-			//_controller.velocity.y = 0f;
-
-
 		}
 
 
@@ -270,7 +287,7 @@ public class EnemyController : MonoBehaviour
 		if (enemyDead)
 		{
 			CancelInvoke ("poisonDamage");
-			_animator.Play(Animator.StringToHash("Enemy_Idle"));
+			_animator.Play(Animator.StringToHash("Enemy_Death"));
 
 		}
 
@@ -278,7 +295,7 @@ public class EnemyController : MonoBehaviour
 
 	public void poisonDamage()
 	{
-		enemyHealth -= 2;
+		enemyHealth -= 5;
 		displayDamageText (Color.magenta, "2");
 	}
 
@@ -341,6 +358,9 @@ public class EnemyController : MonoBehaviour
 
 	void displayDamageText(Color color, string text)
 	{
+		audioSource.clip = hitAudio;
+		audioSource.Play ();
+
 		var damageIndicator = new GameObject();
 		var textMesh = damageIndicator .AddComponent<TextMesh>();
 		damageIndicator.AddComponent<DamageText> ();

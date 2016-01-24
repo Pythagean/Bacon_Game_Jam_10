@@ -55,9 +55,9 @@ public class PlayerController : MonoBehaviour
   	//private float staminaUsageJump = 15f;
 
 	public int numberOfGrapples = 5;
-	public int numberOfArrows = 20;
-	public int numberOfFire = 5;
-	public int numberOfPoison = 5;
+	public int numberOfArrows = 12;
+	public int numberOfFire = 3;
+	public int numberOfPoison = 3;
   
 	List<GameObject> arrowList;
 	public GameObject ArrowPrefab;
@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
  
 	void Awake()
 	{
+
 		_animator = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2D>();
 		//health = GetComponent<PlayerHealth>();
@@ -115,6 +116,12 @@ public class PlayerController : MonoBehaviour
 		arrowList = new List<GameObject>();
 
 		audioSource = GetComponent<AudioSource> ();
+
+		numberOfArrows = ApplicationModel.currentArrows;
+		numberOfGrapples = ApplicationModel.currentGrapple;
+		numberOfPoison = ApplicationModel.currentPoison;
+		numberOfFire = ApplicationModel.currentFire;
+		curHealth = ApplicationModel.currentPlayerHealth;
 
 	}
 
@@ -150,6 +157,7 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 
+
 		if (!playerDead)
 		{
 			_topRight = new Vector2(transform.position.x+width, transform.position.y+height);
@@ -168,10 +176,16 @@ public class PlayerController : MonoBehaviour
 
 			//Health Regeneration
 			if (curHealth > maxHealth - 1)
+			{
 				curHealth = maxHealth;
-			else
+			}
+				
+			else 
+			{
 				curHealth += healthRegen * Time.deltaTime;
-
+			}
+				
+		//	ApplicationModel.currentPlayerHealth = curHealth;
 
 			if( Input.GetKey( Right ) && pullingIntoGrapple == false)
 			{
@@ -224,8 +238,15 @@ public class PlayerController : MonoBehaviour
 
 			if(Input.GetKeyDown(Down))
 			{
+				//Remove current grapple
+				var objects = GameObject.FindGameObjectsWithTag("Grapple");
+				var objectCount = objects.Length;
+				foreach (var obj in objects) {
+					Destroy (obj);
+				}
 				pullingIntoGrapple = false;
 				freezeGravity = false;
+				grappling = false;
 			}
 
 
@@ -254,11 +275,12 @@ public class PlayerController : MonoBehaviour
 					Vector3 mousePositionVector = new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane);
 					var mousePositionWorldVector = Camera.main.ScreenToWorldPoint(mousePositionVector);
 					Vector3 controllerPosition = new Vector3(_controller.transform.position.x,_controller.transform.position.y);
-					Debug.DrawRay(controllerPosition,(mousePositionWorldVector-controllerPosition),Color.green,1);
+					//Debug.DrawRay(controllerPosition,(mousePositionWorldVector-controllerPosition),Color.green,1);
 
 					//Create Arrow Object
 					GameObject arrowInstance = (GameObject)Instantiate(ArrowPrefab, controllerPosition, Quaternion.identity);
 					numberOfArrows -= 1;
+
 
 					//Shoot the grapple
 					if (Input.GetKeyDown (ShootSpecialArrow) && numberOfGrapples > 0 && arrowType == "grapple")
@@ -345,17 +367,17 @@ public class PlayerController : MonoBehaviour
 				if (disableHang == false)
 				{
 					_raycastTopLeft = Physics2D.Raycast(_topLeft, Vector2.left, 0.1f, platformMask);
-					Debug.DrawRay (_topLeft, Vector2.left, Color.blue, 0.1f);
+					//Debug.DrawRay (_topLeft, Vector2.left, Color.blue, 0.1f);
 
 
 					_raycastBottomLeft = Physics2D.Raycast(_bottomLeft, Vector2.left, 0.1f, platformMask);
-					Debug.DrawRay (_bottomLeft, Vector2.left, Color.blue, 0.1f);
+					//Debug.DrawRay (_bottomLeft, Vector2.left, Color.blue, 0.1f);
 
 					_raycastTopRight = Physics2D.Raycast(_topRight, Vector2.right, 0.1f, platformMask);
-					Debug.DrawRay (_topRight, Vector2.right, Color.blue, 0.1f);
+					//Debug.DrawRay (_topRight, Vector2.right, Color.blue, 0.1f);
 
 					_raycastBottomRight = Physics2D.Raycast(_bottomRight, Vector2.right, 0.1f, platformMask);
-					Debug.DrawRay (_bottomRight, Vector2.right, Color.blue, 0.1f);
+					//Debug.DrawRay (_bottomRight, Vector2.right, Color.blue, 0.1f);
 
 					if (((!_raycastTopRight && _raycastBottomRight) || (!_raycastTopLeft && _raycastBottomLeft)) && _controller.velocity.y <= 0)
 					{
@@ -407,29 +429,29 @@ public class PlayerController : MonoBehaviour
 
 				if(Input.GetKeyDown(KeyCode.Alpha1))
 				{
-					typeFire.GetComponent<SpriteRenderer> ().sortingOrder = 0;
-					typePoison.GetComponent<SpriteRenderer> ().sortingOrder = 0;
+					typeFire.GetComponent<SpriteRenderer> ().sortingOrder = 1;
+					typePoison.GetComponent<SpriteRenderer> ().sortingOrder = 1;
 					//Grapple
-					typeGrapple.GetComponent<SpriteRenderer> ().sortingOrder = 1;
+					typeGrapple.GetComponent<SpriteRenderer> ().sortingOrder = 2;
 					arrowType = "grapple";
 					//typeGrapple.SetActive (true);
 
 
 				} else if (Input.GetKeyDown(KeyCode.Alpha2) && grappling == false)
 				{
-					typeGrapple.GetComponent<SpriteRenderer> ().sortingOrder = 0;
-					typePoison.GetComponent<SpriteRenderer> ().sortingOrder = 0;
-					typeFire.GetComponent<SpriteRenderer> ().sortingOrder = 1;
+					typeGrapple.GetComponent<SpriteRenderer> ().sortingOrder = 1;
+					typePoison.GetComponent<SpriteRenderer> ().sortingOrder = 1;
+					typeFire.GetComponent<SpriteRenderer> ().sortingOrder = 2;
 					//typeFire.SetActive (true);
 					//Fire
 					arrowType = "fire";
 				}
 				else if (Input.GetKeyDown(KeyCode.Alpha3) && grappling == false)
 				{
-					typeGrapple.GetComponent<SpriteRenderer> ().sortingOrder = 0;
-					typeFire.GetComponent<SpriteRenderer> ().sortingOrder = 0;
+					typeGrapple.GetComponent<SpriteRenderer> ().sortingOrder = 1;
+					typeFire.GetComponent<SpriteRenderer> ().sortingOrder = 1;
 
-					typePoison.GetComponent<SpriteRenderer> ().sortingOrder = 1;
+					typePoison.GetComponent<SpriteRenderer> ().sortingOrder = 2;
 					//typePoison.SetActive (true);
 					//Fire
 					arrowType = "poison";
@@ -473,14 +495,25 @@ public class PlayerController : MonoBehaviour
 			ApplicationModel.currentLevel = Application.loadedLevelName;
 			Application.LoadLevel ("DeathScreen");
 		}
+
+		ApplicationModel.currentPlayerHealth = curHealth;
+		ApplicationModel.currentArrows = numberOfArrows;
+		ApplicationModel.currentFire = numberOfFire;
+		ApplicationModel.currentGrapple = numberOfGrapples;
+		ApplicationModel.currentPoison = numberOfPoison;
 			
 
 	}
 
 	public void damagePlayer(int damage)
 	{
+		
 		if (!playerDead)
 		{
+			audioSource.clip = hitAudio;
+			audioSource.Play ();
+
+			//Debug.Log ("DAMAGE");
 			curHealth -= damage;
 
 			displayDamageText (Color.red, damage.ToString ());
@@ -496,6 +529,8 @@ public class PlayerController : MonoBehaviour
 				playerDead = true;
 			}
 
+		} else{
+			Debug.Log("playerDead: " + playerDead.ToString());
 		}
 
 	}
