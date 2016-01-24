@@ -1,0 +1,39 @@
+Declaring:
+
+	private AudioSource audioSource;
+	public AudioClip jumpAudio;
+	public AudioClip attackAudio;
+	public AudioClip hitAudio;
+
+Playing:
+
+    	//Shooting Projectile
+		if (Input.GetKeyDown (ShootArrow) || Input.GetKeyDown(ShootSpecialArrow)) {
+
+			audioSource.clip = attackAudio;
+			audioSource.Play ();
+
+
+
+
+	if (holdingLedge)
+	{
+		//Debug.Log ("Holding Ledge!");
+		//_controller.isGrounded = true;
+		_controller.velocity = Vector3.zero;
+
+		if (Input.GetKeyDown (Jump))
+		{
+
+			audioSource.clip = jumpAudio;
+			audioSource.Play ();
+
+
+
+
+
+	// we can only jump whilst grounded
+	if( _controller.isGrounded && Input.GetKeyDown( Jump ))// && curStamina > staminaUsageJump)
+	{
+		audioSource.clip = jumpAudio;
+		audioSource.Play ();
