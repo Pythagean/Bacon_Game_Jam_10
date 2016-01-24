@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/6Level.unity
+- path: C:/Users/Brayden/Documents/GitHub/OneWeaponManyUses/Assets/Scenes/MainMenu.unity
   isLoaded: 1
   isActive: 1
