@@ -16,8 +16,12 @@ public class EnemyController : MonoBehaviour
 	private Animator _animator;
 	private Vector3 _velocity;
 
-	public float randomMultiplier = 150f;
+	public GameObject FirePrefab;
+	public GameObject ArrowPrefab;
+	public GameObject PoisonPrefab;
 
+	public float randomMultiplier = 150f;
+	private bool enemyDead = false;
 	private bool movingLeft;
 	private bool movingRight;
 	private float waitBeforeNextMove;
@@ -36,6 +40,8 @@ public class EnemyController : MonoBehaviour
 	private float normalizedHorizontalSpeed = 0;
 
 	public float enemyHealth = 50;
+	private bool enemyOnFire = false;
+	private bool enemyPoisoned = false;
 
 	void Awake()
 	{
@@ -193,6 +199,7 @@ public class EnemyController : MonoBehaviour
 
 		} else if(agro)
 		{
+			_animator.Play(Animator.StringToHash("Enemy_Attack"));
 
 			player = GameObject.FindGameObjectWithTag("Player");
 			var currentDistanceToPlayer = Vector2.Distance(transform.position,player.transform.position);
@@ -214,37 +221,119 @@ public class EnemyController : MonoBehaviour
 
 
 		//Debug.Log ("Health: " + enemyHealth.ToString ());
-		if (enemyHealth <= 0)
+		if (enemyHealth <= 0 && enemyDead == false)
 		{
 			wandering = false;
 			agro = false;
+			_animator.Play(Animator.StringToHash("Enemy_Death"));
+
+			var enemyRigidbody = GetComponent<Rigidbody2D> ();
+
+			enemyRigidbody.transform.Rotate(0,0,90);
+			enemyRigidbody.transform.position = new Vector3 (enemyRigidbody.transform.position.x, enemyRigidbody.transform.position.y - 0.3f);
+			enemyDead = true;
+
+			if (enemyOnFire)
+			{
+				Vector3 controllerPosition = new Vector3(_controller.transform.position.x,_controller.transform.position.y);
+				GameObject fireInstance = (GameObject)Instantiate(FirePrefab, controllerPosition, Quaternion.identity);
+			}
 
 
 		}
 
+		if (enemyPoisoned)
+		{
+			
+		}
+			
+
+		if (enemyDead)
+		{
+			CancelInvoke ("poisonDamage");
+			_animator.Play(Animator.StringToHash("Enemy_Idle"));
+
+		}
+
 	}
+
+	public void poisonDamage()
+	{
+		enemyHealth -= 2;
+		displayDamageText (Color.magenta, "2");
+	}
+
 
 	public void HitByArrow(string arrowType)
 	{
+
+//		Vector3 controllerPosition = new Vector3(_controller.transform.position.x,_controller.transform.position.y);
+//		GameObject arrowInstance = (GameObject)Instantiate(ArrowPrefab, controllerPosition, Quaternion.identity);
+//		var arrowAnimator = arrowInstance.GetComponent<Animator> ();
+//		arrowAnimator.Play ("arrow_hit");
+
+		if (enemyHealth > 0)
+		{
+			Color textColor = Color.red;
+			var damageToTake = 0;
+			Debug.Log ("Hit by a " + arrowType);
+			switch(arrowType)
+			{
+			case "normal":
+				damageToTake = 25;
+				break;
+			case "fire":
+				damageToTake = 50;
+				enemyOnFire = true;
+				break;
+			case "grapple":
+				damageToTake = 25;
+				break;
+			case "poison":
+				damageToTake = 25;
+				textColor = Color.magenta;
+				createPoisonSprite ();
+				enemyPoisoned = true;
+				InvokeRepeating ("poisonDamage", 1, 1);
+				break;
+			}
+
+			enemyHealth -= damageToTake;
+
+			displayDamageText (textColor, damageToTake.ToString ());
+
+			//Debug.Log ("Ebeny Health: " + enemyHealth.ToString ());
+		}
 		
 
 
-		Debug.Log ("Hit by a " + arrowType);
-		switch(arrowType)
-		{
-		case "normal":
-			enemyHealth -= 25;
-			break;
-		case "fire":
-			enemyHealth -= 50;
-			break;
-		case "grapple":
-			enemyHealth -= 25;
-			break;
-		}
+
 
 	}
 
+	public void createPoisonSprite()
+	{
+		Vector3 controllerPosition = new Vector3(_controller.transform.position.x,_controller.transform.position.y);
+		GameObject poisonInstance = (GameObject)Instantiate(PoisonPrefab, controllerPosition, Quaternion.identity);
+		poisonInstance.GetComponent<Poison> ().enemy = this.gameObject;
+		//oisonInstance.Ini
+		//poisonInstance.GetComponent<Poison>().enemy = this.gameObject;
+	}
+
+	void displayDamageText(Color color, string text)
+	{
+		var damageIndicator = new GameObject();
+		var textMesh = damageIndicator .AddComponent<TextMesh>();
+		damageIndicator.AddComponent<DamageText> ();
+
+		textMesh.transform.localScale = new Vector3 (0.2f, 0.2f, 0.2f);
+
+		textMesh.color = color;
+		textMesh.text = text;
+
+		var currentPosition = GetComponent<Rigidbody2D> ().transform.position;
+		damageIndicator.transform.position = new Vector3(currentPosition.x-0.1f,currentPosition.y+0.75f);
+	}
 
 
 

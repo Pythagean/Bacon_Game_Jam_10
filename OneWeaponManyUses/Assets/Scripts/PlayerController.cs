@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
 	public int numberOfGrapples = 5;
 	public int numberOfArrows = 20;
 	public int numberOfFire = 5;
+	public int numberOfPoison = 5;
   
 	List<GameObject> arrowList;
 	public GameObject ArrowPrefab;
@@ -257,6 +258,14 @@ public class PlayerController : MonoBehaviour
 					numberOfFire -= 1;
 				}
 
+				if (Input.GetKeyDown (ShootSpecialArrow) && numberOfPoison > 0 && arrowType == "poison")
+				{
+					arrowScript arrowScriptInstance = arrowInstance.GetComponent<arrowScript>();
+					arrowScriptInstance.arrowType = "poison";
+					arrowScriptInstance.tag = "Poison";
+					numberOfPoison -= 1;
+				}
+
 
 				Debug.Log ("adding force");
 				//Add force to arrow object
@@ -362,6 +371,12 @@ public class PlayerController : MonoBehaviour
 				//Fire
 				arrowType = "fire";
 			}
+			else if (Input.GetKeyDown(KeyCode.Alpha3) && grappling == false)
+			{
+
+				//Fire
+				arrowType = "poison";
+			}
 
 			
 
@@ -402,7 +417,8 @@ public class PlayerController : MonoBehaviour
 		GUI.Label (new Rect (5, 30, 200, 25), "Arrows:    " + numberOfArrows);
 		GUI.Label (new Rect (5, 40, 200, 25), "Grapples:  " + numberOfGrapples);
 		GUI.Label (new Rect (5, 50, 200, 25), "Fire:  " + numberOfFire);
-		GUI.Label (new Rect (5, 60, 200, 25), "Arrow Type:  " + arrowType);
+		GUI.Label (new Rect (5, 60, 200, 25), "Poison:  " + numberOfPoison);
+		GUI.Label (new Rect (5, 70, 200, 25), "Arrow Type:  " + arrowType);
 	}
   
 

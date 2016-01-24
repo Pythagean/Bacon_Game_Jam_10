@@ -8,7 +8,7 @@ public class arrowScript : MonoBehaviour {
 	//public float arrowLifetime = 4.0f;
 	//public Vector3 arrowDirection = new Vector3(0,0);
 
-	public float arrowCollision = 0.3f;
+	public float arrowCollision = 0.1f;
 	public LayerMask platformMask = 0;
 	public LayerMask enemyMask = 0;
 
@@ -36,6 +36,7 @@ public class arrowScript : MonoBehaviour {
 
 	void Update () 
 	{
+
 		if (arrowType == "grapple")
 		{
 			player = GameObject.Find("Player");
@@ -48,13 +49,13 @@ public class arrowScript : MonoBehaviour {
 
 		if (arrowType == "fire")		
 		{
-			Debug.Log ("Fired Fire arrow");
+			//Debug.Log ("Fired Fire arrow");
 			_animator.Play( Animator.StringToHash( "arrow_fire" ) );	
 		}
 
 		//Detect Collisions
 		velocity = GetComponent<Rigidbody2D>().velocity;
-		_raycast = Physics2D.Raycast(transform.position,velocity, arrowCollision, platformMask);
+		_raycast = Physics2D.Raycast(transform.position, velocity, arrowCollision, platformMask);
 
 		_raycastEnemy = Physics2D.Raycast(transform.position,velocity, arrowCollision, enemyMask);
 
@@ -63,6 +64,7 @@ public class arrowScript : MonoBehaviour {
 		//If hit enemy detected
 		if (_raycastEnemy && !hasHitEnemy) 
 		{
+
 			//Stops arrow and sets gravity to 0
 			GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 			GetComponent<Rigidbody2D>().gravityScale = 0;
@@ -77,8 +79,20 @@ public class arrowScript : MonoBehaviour {
 
 		if (enemyHitGameObject != null && hasHitEnemy)
 		{
-			
-			GetComponent<Rigidbody2D> ().transform.position = enemyHitGameObject.transform.position;
+			_animator.Play( Animator.StringToHash( "arrow_hit" ) );	
+			var currentPosition = GetComponent<Rigidbody2D> ().transform.position;
+
+			//GetComponent<Rigidbody2D> ().transform.position = (currentPosition - enemyHitGameObject.transform.position).normalized * 0.1f + enemyHitGameObject.transform.position;
+
+			if (GetComponent<Rigidbody2D> ().velocity.x < 0)
+			{
+				GetComponent<Rigidbody2D> ().transform.position = new Vector3 (enemyHitGameObject.transform.position.x-0.1f, enemyHitGameObject.transform.position.y - 0.1f);
+			} else 
+			{
+				GetComponent<Rigidbody2D> ().transform.position = new Vector3 (enemyHitGameObject.transform.position.x+0.1f, enemyHitGameObject.transform.position.y - 0.1f);
+			}
+
+			Destroy (this.gameObject,2f);
 
 		}
 
@@ -92,6 +106,8 @@ public class arrowScript : MonoBehaviour {
 			GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 			GetComponent<Rigidbody2D>().gravityScale = 0;
 		}
+
+
 
 
 
