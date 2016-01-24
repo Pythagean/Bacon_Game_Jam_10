@@ -470,8 +470,8 @@ public class PlayerController : MonoBehaviour
 		{
 			//Player is dead
 
-
-
+			ApplicationModel.currentLevel = Application.loadedLevelName;
+			Application.LoadLevel ("DeathScreen");
 		}
 			
 
