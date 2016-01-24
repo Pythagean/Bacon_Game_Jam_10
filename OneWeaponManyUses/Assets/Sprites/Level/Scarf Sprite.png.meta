@@ -1,0 +1,342 @@
+fileFormatVersion: 2
+guid: eab96c8dd5dd40e45913646421465df4
+timeCreated: 1453609696
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Scarf Sprite_0
+    21300002: Scarf Sprite_1
+    21300004: Scarf Sprite_2
+    21300006: Scarf Sprite_3
+    21300008: Scarf Sprite_4
+    21300010: Scarf Sprite_5
+    21300012: Scarf Sprite_6
+    21300014: Scarf Sprite_7
+    21300016: Scarf Sprite_8
+    21300018: Scarf Sprite_9
+    21300020: Scarf Sprite_10
+    21300022: Scarf Sprite_11
+    21300024: Scarf Sprite_12
+    21300026: Scarf Sprite_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Scarf Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 122
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: -8.5}
+        - {x: -38, y: -15.5}
+        - {x: -37, y: -19.5}
+        - {x: -17, y: -19.5}
+        - {x: 35, y: 20.5}
+        - {x: 35, y: 30.5}
+        - {x: 24, y: 30.5}
+        - {x: -10, y: 20.5}
+    - name: Scarf Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 122
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: -8.5}
+        - {x: -38, y: -9.5}
+        - {x: -38, y: -19.5}
+        - {x: -36, y: -20.5}
+        - {x: -21, y: -20.5}
+        - {x: 36, y: 22.5}
+        - {x: 36, y: 27.5}
+        - {x: 24, y: 27.5}
+        - {x: -19, y: 14.5}
+    - name: Scarf Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 122
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 19.5}
+        - {x: -38, y: -4.5}
+        - {x: -38, y: -21.5}
+        - {x: -24, y: -21.5}
+        - {x: 8, y: -5.5}
+        - {x: 32, y: 12.5}
+        - {x: 32, y: 19.5}
+    - name: Scarf Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 122
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 16.5}
+        - {x: -38, y: -6.5}
+        - {x: -38, y: -17.5}
+        - {x: -37, y: -19.5}
+        - {x: -32, y: -19.5}
+        - {x: -24, y: -14.5}
+        - {x: 6, y: -16.5}
+        - {x: 30, y: 7.5}
+        - {x: 30, y: 16.5}
+    - name: Scarf Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 122
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 13.5}
+        - {x: -38, y: -6.5}
+        - {x: -38, y: -17.5}
+        - {x: -33, y: -24.5}
+        - {x: -22, y: -18.5}
+        - {x: -8, y: -26.5}
+        - {x: 8, y: -26.5}
+        - {x: 24, y: -14.5}
+        - {x: 24, y: 0.5}
+        - {x: -3, y: 13.5}
+    - name: Scarf Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 61
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 9.5}
+        - {x: -30, y: 8.5}
+        - {x: -39, y: -10.5}
+        - {x: -39, y: -19.5}
+        - {x: -36, y: -20.5}
+        - {x: -31, y: -20.5}
+        - {x: -6, y: -30.5}
+        - {x: 6, y: -30.5}
+        - {x: 26, y: -21.5}
+        - {x: 26, y: -5.5}
+        - {x: 10, y: 9.5}
+    - name: Scarf Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 61
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 7.5}
+        - {x: -12, y: 7.5}
+        - {x: -39, y: -11.5}
+        - {x: -39, y: -29.5}
+        - {x: 23, y: -29.5}
+        - {x: 29, y: -13.5}
+        - {x: 29, y: -4.5}
+        - {x: 20, y: 4.5}
+    - name: Scarf Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 61
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: -10.5}
+        - {x: -39, y: -18.5}
+        - {x: -38, y: -19.5}
+        - {x: -26, y: -17.5}
+        - {x: 7, y: -30.5}
+        - {x: 17, y: -30.5}
+        - {x: 25, y: -23.5}
+        - {x: 25, y: 5.5}
+        - {x: 2, y: 5.5}
+        - {x: -37, y: -7.5}
+    - name: Scarf Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 61
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: -1.5}
+        - {x: 3, y: -1.5}
+        - {x: -39, y: -8.5}
+        - {x: -39, y: -21.5}
+        - {x: 0, y: -30.5}
+        - {x: 19, y: -30.5}
+        - {x: 29, y: -19.5}
+        - {x: 29, y: -11.5}
+        - {x: 24, y: -2.5}
+    - name: Scarf Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 61
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 1.5}
+        - {x: 15, y: 3.5}
+        - {x: -31, y: 3.5}
+        - {x: -39, y: -1.5}
+        - {x: -39, y: -13.5}
+        - {x: -37, y: -14.5}
+        - {x: -33, y: -14.5}
+        - {x: 9, y: -20.5}
+        - {x: 23, y: -20.5}
+        - {x: 30, y: -12.5}
+        - {x: 30, y: -7.5}
+    - name: Scarf Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 10.5}
+        - {x: -39, y: -7.5}
+        - {x: -39, y: -16.5}
+        - {x: 28, y: -16.5}
+        - {x: 38, y: -14.5}
+        - {x: 38, y: 2.5}
+        - {x: 1, y: 10.5}
+    - name: Scarf Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: -16.5}
+        - {x: 29, y: -16.5}
+        - {x: 29, y: 21.5}
+        - {x: -9, y: 21.5}
+        - {x: -39, y: 10.5}
+    - name: Scarf Sprite_12
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 30.5}
+        - {x: -39, y: -6.5}
+        - {x: -39, y: -14.5}
+        - {x: 24, y: -14.5}
+        - {x: 33, y: -13.5}
+        - {x: 33, y: 30.5}
+    - name: Scarf Sprite_13
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 27.5}
+        - {x: -37, y: -2.5}
+        - {x: -37, y: -14.5}
+        - {x: -28, y: -14.5}
+        - {x: 39, y: 13.5}
+        - {x: 39, y: 24.5}
+        - {x: 36, y: 27.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,12 +12,14 @@ public class ExitLevel : MonoBehaviour {
 	public Sprite half;
 	public Sprite open;
 
+	private bool displayingPrompt = false;
+
 	private RaycastHit2D raycastBottomMiddle;
 	private Vector2 bottomMiddle;
 
 	void Start(){
 		spriteRenderer = GetComponent<SpriteRenderer> ();
-		spriteRenderer.sprite = closed;
+		//spriteRenderer.sprite = closed;
 
 	}
 
@@ -27,19 +29,49 @@ public class ExitLevel : MonoBehaviour {
 		Debug.DrawRay (bottomMiddle, Vector2.up, Color.blue, 0.05f);
 
 		if (raycastBottomMiddle) {
-			spriteRenderer.sprite = half;
+
+			//displayingPrompt = false;
+			if (!displayingPrompt) 
+			{
+				displayText (Color.white, "Press 'E'");
+			}
+
+			//spriteRenderer.sprite = half;
 			if (Input.GetKey (KeyCode.E)) {
-				spriteRenderer.sprite = open;
+				//spriteRenderer.sprite = open;
 				LoadLevel ();
 			}
+		} else
+		{
+			displayingPrompt = false;
 		}
 
-		if (!raycastBottomMiddle)
-			spriteRenderer.sprite = closed;
+		//if (!raycastBottomMiddle)
+		//	spriteRenderer.sprite = closed;
 	}
 
 	public void LoadLevel(){
 		Application.LoadLevel (levelToLoad);
 	}
+
+	void displayText(Color color, string text)
+	{
+		var damageIndicator = new GameObject();
+		var textMesh = damageIndicator .AddComponent<TextMesh>();
+		damageIndicator.AddComponent<DamageText> ();
+		damageIndicator.GetComponent<DamageText> ().destroy = false;
+
+		textMesh.transform.localScale = new Vector3 (0.2f, 0.2f, 0.2f);
+
+		textMesh.color = color;
+		textMesh.text = text;
+
+		var currentPosition = GetComponent<Rigidbody2D> ().transform.position;
+		damageIndicator.transform.position = new Vector3(currentPosition.x-0.1f,currentPosition.y+0.75f);
+		displayingPrompt = true;
+
+		}
+
+
 
 }

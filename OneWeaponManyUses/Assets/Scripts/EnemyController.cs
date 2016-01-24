@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
 	private Animator _animator;
 	private Vector3 _velocity;
 
+	private int timeBetweenDamagingPlayer = 0;
+
 	public GameObject FirePrefab;
 	public GameObject ArrowPrefab;
 	public GameObject PoisonPrefab;
@@ -26,6 +28,8 @@ public class EnemyController : MonoBehaviour
 	private bool movingRight;
 	private float waitBeforeNextMove;
 	private float timeToSpendMoving;
+
+	public int enemyStrength = 25;
 
 	public bool wandering = true;
 	public bool agro = false;
@@ -211,6 +215,21 @@ public class EnemyController : MonoBehaviour
 				agro = false;
 			}
 
+			if (currentDistanceToPlayer < 1)
+			{
+				if (timeBetweenDamagingPlayer < 0)
+				{
+					player.GetComponent<PlayerController> ().damagePlayer (enemyStrength);
+					timeBetweenDamagingPlayer = 60;
+				} else {
+					timeBetweenDamagingPlayer -= 1;
+				}
+
+
+				//StartCoroutine(WaitForSeconds (1));
+
+			}
+
 
 			var targetPoint = new Vector3 (player.transform.position.x, transform.position.y);
 			transform.position = Vector3.MoveTowards(transform.position, targetPoint, 0.05f);
@@ -325,6 +344,7 @@ public class EnemyController : MonoBehaviour
 		var damageIndicator = new GameObject();
 		var textMesh = damageIndicator .AddComponent<TextMesh>();
 		damageIndicator.AddComponent<DamageText> ();
+		damageIndicator.GetComponent<DamageText> ().destroy = true;
 
 		textMesh.transform.localScale = new Vector3 (0.2f, 0.2f, 0.2f);
 

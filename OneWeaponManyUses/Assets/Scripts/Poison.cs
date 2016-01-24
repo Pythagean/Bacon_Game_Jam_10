@@ -7,7 +7,7 @@ public class Poison : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//Destroy (this.gameObject,2f);	
+		Destroy (this.gameObject,2f);	
 	}
 	
 	// Update is called once per frame
